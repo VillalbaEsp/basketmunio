@@ -45,7 +45,7 @@ body{
     height: 100%;
     display: inline-block;
     vertical-align: top;
-     margin-left: 45%; 
+     margin-left: 43%; 
 
 }
 
@@ -59,7 +59,7 @@ body{
 }
 
 #menu_contenedor_img img{
-    width: 50%;
+    width: 200px;
     height: 100%;
     opacity: 1;
 }
