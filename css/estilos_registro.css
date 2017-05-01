@@ -1,0 +1,178 @@
+html{
+    
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+}
+
+#contenedor_registro{
+    
+    width: 100%;
+    height: 80%;    
+    background-image:url(../img/ima.jpg);
+    background-size: cover;
+    background-position: center center;
+   
+}
+
+#menu_cabecera{
+    width: 100%;
+    height: 9.5%;
+    background-color:#004F7C;
+  
+}
+
+#menu_contenedor_img{
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+     margin-left: 46%; 
+
+}
+
+#menu_contenedor_ul{
+    z-index: 1000;
+    width: 22%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8%;
+    
+}
+
+#menu_contenedor_img img{
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+#menu_contenedor_ul ul {
+    list-style: none;
+}
+
+#menu_contenedor_ul ul li {
+    display: inline-block;
+    position: relative;
+}
+
+#menu_contenedor_ul ul li:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+#menu_contenedor_ul ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+}
+
+ul li a{
+    margin-right: 10px;
+}
+
+ul li:hover .secundario {
+    display: block;
+}
+
+ul li .secundario {
+    display: none;
+    background-color: #004F7C;
+    position: absolute;
+    width: 150%;
+}
+
+#contenedor_form_registro{
+     width: 40%;
+     height: 70.5%;
+     margin: 3% auto;
+     border-radius: 25px;
+     background-color: rgba(255,255,255,0.7);
+     padding-top: 2%;
+}
+
+
+
+#form_registro{
+    width: 60%;
+    height:95%;
+    margin:auto;
+   
+}
+
+form label {
+    display: inline-block;
+    width: 170px;
+    color: #004F7C;
+}
+
+form input {
+    display: inline-block;
+    width:100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#button_registro{
+    width: 20%;
+    height: 50px;
+    background-color:#22E363;
+    color: white;
+    border: 2px solid #22E363;
+    border-radius: 6px;
+    margin-left: 40%;
+}
+
+footer{
+    
+    width: 98%;
+    height: 16.1%;
+    background-color: #004F7C;
+    padding: 1%;
+}
+
+#contenedor_info{
+    
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    color: white;
+    font-weight: lighter;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+    
+}
+
+#info{
+    
+    width: 70%;
+    height: 90%;
+    margin: 0% 14%;
+    text-align: center;
+  
+    
+}
+#info h4{
+ width: 100%;   
+}
+
+#info a{
+    color: #22E363;
+    text-decoration: none;
+    
+}
+
+#info p{
+    font-size: 13px;
+    
+}*/
