@@ -30,7 +30,7 @@ $aleatorio = uniqid(); //Genera un id único para identificar la cuenta a traves
 /*$contrasena = rand(1999, 9999); //Devuelve un número aleatorio entre los dos rangos. Lo usuaremos como
                                 //Contraseña temporal.*/
 
-$connect= mysqli_connect("127.0.0.1", "root", "", "basketmunio");
+$connect= mysqli_connect("mysql.hostinger.es", "u592861914_root", "catalunya69", "u592861914_bm");
                                 
 $sql = "Insert Into usuarios (apodo, nombre, apellidos, correo, password, f_nacimiento, codigo, activo) Values ('$apodo', '$nombre', '$apellidos', '$correo', '$password', '$f_nacimiento', '$aleatorio', 0)";
 
@@ -39,11 +39,10 @@ $datos = mysqli_query($connect, $sql);
 
 //Tus rutinas para insertar en la base de datos.
 
-$mensaje = "Registro en Basketmunio\n\n";
-$mensaje .= "Estos son tus datos de registro:\n";
-$mensaje .= "apodo: $apodo.\n";
-$mensaje .= "Contraseña: $password.\n\n";
-$mensaje .= "Debes activar tu cuenta pulsando este enlace: http://www.basketmunio.esy.es/activacion.php?id=$aleatorio";
+$mensaje= "¡Te damos la bienvenida a BASKETMUNIO!
+	Esta a solo un paso de poder jugar en la plataforma, para ello deberas activar tu cuenta pulsando el siguiente enlace:
+
+	http://www.basketmunio.esy.es/activacion.php?id=".$aleatorio;
 
 $asunto = "Activación de tu cuenta en Basketmunio";
 
