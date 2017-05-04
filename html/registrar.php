@@ -29,7 +29,6 @@ $password = password_hash($password, PASSWORD_BCRYPT); //para comprobar que la c
 $aleatorio = uniqid(); //Genera un id único para identificar la cuenta a traves del correo.
 /*$contrasena = rand(1999, 9999); //Devuelve un número aleatorio entre los dos rangos. Lo usuaremos como
                                 //Contraseña temporal.*/
-// EJEMPLO ALBERTO
 
 $connect= mysqli_connect("mysql.hostinger.es", "u592861914_root", "catalunya69", "u592861914_bm");
                                 
