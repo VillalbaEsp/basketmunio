@@ -30,7 +30,9 @@ $aleatorio = uniqid(); //Genera un id único para identificar la cuenta a traves
 /*$contrasena = rand(1999, 9999); //Devuelve un número aleatorio entre los dos rangos. Lo usuaremos como
                                 //Contraseña temporal.*/
 
-$connect= mysqli_connect("mysql.hostinger.es", "u592861914_root", "catalunya69", "u592861914_bm");
+// $connect= mysqli_connect("mysql.hostinger.es", "u592861914_root", "catalunya69", "u592861914_bm");
+
+$connect= mysqli_connect("127.0.0.1", "root", "", "basketmunio");
                                 
 $sql = "Insert Into usuarios (apodo, nombre, apellidos, correo, password, f_nacimiento, codigo, activo) Values ('$apodo', '$nombre', '$apellidos', '$correo', '$password', '$f_nacimiento', '$aleatorio', 0)";
 
