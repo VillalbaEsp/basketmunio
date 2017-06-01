@@ -1,16 +1,4 @@
-﻿/*
-created: 05/04/2017
-modified: 14/05/2017
-model: mysql 5.0
-database: mysql 5.0
-*/
-
-
--- create tables section -------------------------------------------------
-
--- table usuarios
-
-create table `usuarios`
+﻿create table `usuarios`
 (
   `id_usuario` int not null auto_increment,
   `apodo_usuario` varchar(25) not null,
@@ -35,8 +23,6 @@ alter table `usuarios` add unique `apodo_usuario` (`apodo_usuario`)
 alter table `usuarios` add unique `email_usuario` (`email_usuario`)
 ;
 
--- table jugadores
-
 create table `jugadores`
 (
   `id_jugador` int(11) not null auto_increment,
@@ -48,8 +34,6 @@ create table `jugadores`
  unique `id_jugador` (`id_jugador`)
 ) engine = innodb
 ;
-
--- table ligas
 
 create table `ligas`
 (
@@ -64,8 +48,6 @@ pv: privado',
 ) engine = innodb
 ;
 
--- table partidos_reales
-
 create table `partidos_reales`
 (
   `id_partido` int not null auto_increment,
@@ -77,8 +59,6 @@ create table `partidos_reales`
   primary key (`id_partido`)
 ) engine = innodb
 ;
-
--- table equipos
 
 create table `equipos`
 (
@@ -101,8 +81,6 @@ create index `ix_relationship30` on `equipos` (`id_liga`)
 alter table `equipos` add unique `nombre_equipo` (`nombre_equipo`)
 ;
 
--- table jugadores_equipos
-
 create table `jugadores_equipos`
 (
   `id_jugador_equipo` int not null auto_increment,
@@ -118,8 +96,6 @@ create index `ix_relationship31` on `jugadores_equipos` (`id_equipo`,`id_usuario
 
 create index `ix_relationship32` on `jugadores_equipos` (`id_jugador`)
 ;
-
--- table jugadores_partidos_reales
 
 create table `jugadores_partidos_reales`
 (
@@ -147,8 +123,6 @@ create table `jugadores_partidos_reales`
 alter table `jugadores_partidos_reales` add  primary key (`id_partido`,`id_jugador`)
 ;
 
--- table estadisticas_totales
-
 create table `estadisticas_totales`
 (
   `id_jugador` int(11) not null,
@@ -175,8 +149,6 @@ create table `estadisticas_totales`
 alter table `estadisticas_totales` add  primary key (`id_jugador`)
 ;
 
--- table jugador_libre
-
 create table `jugador_libre`
 (
   `id_jugador_libre` int not null auto_increment,
@@ -187,8 +159,6 @@ create table `jugador_libre`
 
 create index `ix_relationship33` on `jugador_libre` (`id_jugador`)
 ;
-
--- table mercados
 
 create table `mercados`
 (
@@ -208,8 +178,6 @@ create index `ix_relationship35` on `mercados` (`id_jugador_equipo`)
 
 create index `ix_relationship36` on `mercados` (`id_liga`)
 ;
-
--- create relationships section ------------------------------------------------- 
 
 alter table `equipos` add constraint `tiene` foreign key (`id_usuario`) references `usuarios` (`id_usuario`) on delete cascade on update cascade
 ;
