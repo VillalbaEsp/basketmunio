@@ -25,7 +25,7 @@ Tyler Zeller,P,Boston Celtics,0
 Jonas Jerebko,AP,Boston Celtics,0
 James Young,E,Boston Celtics,0
 Brook Lopez,P,Brooklyn Nets,0
-Bojan Bogdanovic,A,Bojan Bogdanovic,,0
+Bojan Bogdanovic,A,Brooklyn Nets,0
 Jeremy Lin,B,Brooklyn Nets,0
 Sean Kilpatrick,B-E,Brooklyn Nets,0
 Trevor Booker,A,Brooklyn Nets,0
@@ -52,7 +52,6 @@ Marco Belinelli,E,Charlotte Hornets,0
 Jeremy Lamb,E,Charlotte Hornets,0
 Michael Kidd-Gilchrist,A,Charlotte Hornets,0
 Cody Zeller,AP-P,Charlotte Hornets,0
-Spencer Hawes,P,Charlotte Hornets,0
 Ramon Sessions,B,Charlotte Hornets,0
 Johnny O'Bryant III,AP-P,Charlotte Hornets,0
 Briante Weber,B,Charlotte Hornets,0
@@ -93,23 +92,19 @@ James Jones,E-A,Cleveland Cavaliers,0
 Harrison Barnes,A,Dallas Mavericks,0
 Dirk Nowitzki,AP,Dallas Mavericks,0
 Wesley Matthews,E,Dallas Mavericks,0
-Deron Williams,B,Dallas Mavericks,0
 Seth Curry,B,Dallas Mavericks,0
 J.J. Barea,B-E,Dallas Mavericks,0
 Yogi Ferrell,B-E,Dallas Mavericks,0
 Nerlens Noel,P,Dallas Mavericks,0
 DeAndre Liggins,B,Dallas Mavericks,0
 Jonathan Gibson,B,Dallas Mavericks,0
-Justin Anderson,E-A,Dallas Mavericks,0
 Devin Harris,B,Dallas Mavericks,0
-Quinn Cook,B-E,Dallas Mavericks,0
 Pierre Jackson,E,Dallas Mavericks,0
 Dwight Powell,AP,Dallas Mavericks,0
 Jarrod Uthoff,AP,Dallas Mavericks,0
 Dorian Finney-Smith,A,Dallas Mavericks,0
 Manny Harris,E,Dallas Mavericks,0
 Andrew Bogut,P,Dallas Mavericks,0
-Quincy Acy,AP,Dallas Mavericks,0
 Nicolas Brussino,E,Dallas Mavericks,0
 Salah Mejri,P,Dallas Mavericks,0
 AJ Hammons,P,Dallas Mavericks,0
@@ -124,7 +119,6 @@ Jamal Murray,B-E,Denver Nuggets,0
 Jameer Nelson,B,Denver Nuggets,0
 Kenneth Faried,AP,Denver Nuggets,0
 Mason Plumlee,P,Denver Nuggets,0
-Jusuf Nurkic,P,Denver Nuggets,0
 Darrell Arthur,A,Denver Nuggets,0
 Juan Hernangomez,A,Denver Nuggets,0
 Malik Beasley,B-E,Denver Nuggets,0
@@ -200,7 +194,6 @@ Paul Pierce,A,L.A Clippers,0
 Wesley Johnson,A,L.A Clippers,0
 D'Angelo Russell,B,Los Angeles Lakers,0
 Jordan Clarkson,E,Los Angeles Lakers,0
-Lou Williams,B,Los Angeles Lakers,0
 Nick Young,E,Los Angeles Lakers,0
 Julius Randle,AP,Los Angeles Lakers,0
 Brandon Ingram,A,Los Angeles Lakers,0
@@ -228,7 +221,6 @@ Deyonta Davis,AP-P,Memphis Grizzlies,0
 Troy Daniels,B-E,Memphis Grizzlies,0
 Jarell Martin,A,Memphis Grizzlies,0
 Wade Baldwin IV,B-E,Memphis Grizzlies,0
-Derrick Williams,A,Miami Heat,0
 Dion Waiters,E,Miami Heat,0
 Goran Dragic,B,Miami Heat,0
 Hassan Whiteside,P,Miami Heat,0
@@ -253,7 +245,6 @@ Khris Middleton,A,Milwaukee-Bucks,0
 Malcolm Brogdon,B-E,Milwaukee-Bucks,0
 Matthew Dellavedova,B-E,Milwaukee-Bucks,0
 Michael Beasley,A,Milwaukee-Bucks,0
-Miles Plumlee,P,Milwaukee-Bucks,0
 Mirza Teletovic,AP,Milwaukee-Bucks,0
 Rashad Vaughn,E,Milwaukee-Bucks,0
 Spencer Hawes,AP,Milwaukee-Bucks,0
@@ -270,7 +261,6 @@ John Lucas III,B-E,Minesota Timberwolves,0
 Jordan Hill,AP-P,Minesota Timberwolves,0
 Karl-Anthony Towns,P,Minesota Timberwolves,0
 Kris Dunn,B,Minesota Timberwolves,0
-Lance Stephenson,A,Minesota Timberwolves,0
 Nemanja Bjelica,A,Minesota Timberwolves,0
 Omri Casspi,AP,Minesota Timberwolves,0
 Ricky Rubio,B,Minesota Timberwolves,0
@@ -280,8 +270,6 @@ Zach LaVine,B-E,Minesota Timberwolves,0
 Alexis Ajinca,P,New Orleans Pelicans,0
 Anthony Brown,E-A,New Orleans Pelicans,0
 Anthony Davis,AP-P,New Orleans Pelicans,0
-Archie Goodwin,B,New Orleans Pelicans,0
-Buddy Hield,E,New Orleans Pelicans,0
 Cheick Diallo,A,New Orleans Pelicans,0
 Dante Cunningham,A,New Orleans Pelicans,0
 DeMarcus Cousins,P,New Orleans Pelicans,0
@@ -291,16 +279,12 @@ Hollis Thompson,A,New Orleans Pelicans,0
 Jarrett Jack,B,New Orleans Pelicans,0
 Jordan Crawford,E,New Orleans Pelicans,0
 Jrue Holiday,B,New Orleans Pelicans,0
-Langston Galloway,B,New Orleans Pelicans,0
 Omer Asik,P,New Orleans Pelicans,0
-Omri Casspi,A,New Orleans Pelicans,0
 Quinn Cook,B,New Orleans Pelicans,0
 Reggie Williams,E,New Orleans Pelicans,0
 Solomon Hill,A,New Orleans Pelicans,0
-Terrence Jones,A-AP,New Orleans Pelicans,0
 Tim Frazier,B-E,New Orleans Pelicans,0
 Tyreke Evans,B,New Orleans Pelicans,0
-Wayne Selden,B,New Orleans Pelicans,0
 Carmelo Anthony,A,New York Knicks,0
 Chasson Randle,B,New York Knicks,0
 Courtney Lee,E,New York Knicks,0
@@ -317,13 +301,10 @@ Ron Baker,B-E,New York Knicks,0
 Sasha Vujacic,E,New York Knicks,0
 Willy Hernangomez,P,New York Knicks,0
 Alex Abrines,E,Oklahoma City Thunder,0
-Anthony Morrow,AP,Oklahoma City Thunder,0
-Cameron Payne,B,Oklahoma City Thunder,0
+Andre Roberson,AP,Oklahoma City Thunder,0
 Domantas Sabonis,AP,Oklahoma City Thunder,0
 Doug McDermott,A,Oklahoma City Thunder,0
-Ersan Ilyasova,AP,Oklahoma City Thunder,0
 Jerami Grant,A,Oklahoma City Thunder,0
-Joffrey Lauvergne,AP,Oklahoma City Thunder,0
 Josh Huestis,A,Oklahoma City Thunder,0
 Kyle Singler,E,Oklahoma City Thunder,0
 Nick Collison,AP,Oklahoma City Thunder,0
@@ -339,6 +320,7 @@ Arinze Onuaku,P,Orlando Magic,0
 Bismack Biyombo,P,Orlando Magic,0
 C.J. Watson,B,Orlando Magic,0
 CJ Wilcox,B-E,Orlando Magic,0
+D.J. Augustin,B,Orlando Magic,0
 Damjan Rudez,A,Orlando Magic,0
 Elfrid Payton,B-E,Orlando Magic,0
 Evan Fournier,B-E,Orlando Magic,0
@@ -358,7 +340,6 @@ Jerryd Bayless,B,Philadelphia 76ers,0
 Joel Embiid,P,Philadelphia 76ers,0
 Justin Anderson,A,Philadelphia 76ers,0
 Justin Harper,AP,Philadelphia 76ers,0
-Nerlens Noel,P,Philadelphia 76ers,0
 Nik Stauskas,E,Philadelphia 76ers,0
 Richaun Holmes,P,Philadelphia 76ers,0
 Robert Covington,A,Philadelphia 76ers,0
@@ -393,7 +374,6 @@ Ed Davis,AP,Portland Trail Blazzers,0
 Evan Turner,E-A,Portland Trail Blazzers,0
 Jake Layman,A,Portland Trail Blazzers,0
 Jusuf Nurkic,P,Portland Trail Blazzers,0
-Mason Plumlee,P,Portland Trail Blazzers,0
 Maurice Harkless,A,Portland Trail Blazzers,0
 Meyers Leonard,P,Portland Trail Blazzers,0
 Noah Vonleh,A,Portland Trail Blazzers,0
@@ -446,7 +426,6 @@ Norman Powell,B-E,Toronto Raptors,0
 Pascal Siakam,A,Toronto Raptors,0
 Patrick Patterson,AP-P,Toronto Raptors,0
 Serge Ibaka,AP,Toronto Raptors,0
-Terrence Ross,E,Toronto Raptors,0
 Alec Burks,B-E,Utah Jazz,0
 Boris Diaw,AP,Utah Jazz,0
 Dante Exum,B-E,Utah Jazz,0
@@ -462,7 +441,6 @@ Rodney Hood,E,Utah Jazz,0
 Rudy Gobert,P,Utah Jazz,0
 Shelvin Mack,B-E,Utah Jazz,0
 Trey Lyles,A,Utah Jazz,0
-Andrew Nicholson,A,Washington Wizards,0
 Bradley Beal,E,Washington Wizards,0
 Brandon Jennings,B,Washington Wizards,0
 Daniel Ochefu,A,Washington Wizards,0
