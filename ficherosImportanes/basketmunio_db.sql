@@ -51,7 +51,6 @@ pv: privado',
 create table `partidos_reales`
 (
   `id_partido` int not null auto_increment,
-  `semana_partido` char(2) not null,
   `fecha_hora_partido` datetime not null,
   `equipo_local_partido` varchar(60) not null,
   `equipo_visitante_partido` varchar(60) not null,
