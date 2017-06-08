@@ -8,3 +8,10 @@ http://snipplr.com/view/48702/registrar-usuarios-en-php-con-validacion-de-datos-
 
 SCRIPT DE EXCEL A LA BDD
 https://www.puntogeek.com/2011/06/24/de-excel-a-mysql-facilmente-y-sin-romperte-la-cabeza/
+
+Visor CSV
+http://www.becsv.com/csv-viewer.php
+
+Calendario 
+http://www.basketball-reference.com/leagues/NBA_2017_games-october.html
+
