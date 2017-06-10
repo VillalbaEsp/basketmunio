@@ -141,7 +141,7 @@ class CUser{
 
        $this->array_fields['id']=$resultado['id_usuario'];
 
-       $this->array_fields_registrado['id']=$resultado['id_usuario'];
+       //$this->array_fields_registrado['id']=$resultado['id_usuario'];
 
 
 
@@ -160,14 +160,14 @@ class CUser{
     public function obtenerUsuario($apodo){
 
 
-        $consulta = $this->mysqli->query("SELECT * FROM usuarios WHERE apodo_usuario='".$apodo."'");
+        //$consulta = $this->mysqli->query("SELECT * FROM usuarios WHERE apodo_usuario='".$apodo."'");
 
 
 
-        $prueba = $this->mysqli;
+       // $prueba = $this->mysqli;
 
 
-        $resultado=$consulta->fetch_assoc();
+       // $resultado=$consulta->fetch_assoc();
 
 
         $this->array_fields_registrado['id'] = $resultado['id_usuario'];
