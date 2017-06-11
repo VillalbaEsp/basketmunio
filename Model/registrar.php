@@ -49,7 +49,7 @@ $datos = mysqli_query($connect, $sql);
 $mensaje= "¡Te damos la bienvenida a BASKETMUNIO!
 	Esta a solo un paso de poder jugar en la plataforma, para ello deberas activar tu cuenta pulsando el siguiente enlace:
 
-	http://www.basketmunio.esy.es/activacion.php?id=".$aleatorio;
+	 Introduce el siguiente código en el enlace "  . $aleatorio;
 
 $asunto = "Activación de tu cuenta en Basketmunio";
 
