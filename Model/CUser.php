@@ -78,7 +78,7 @@ class CUser{
                     break;
                 case 'password':
 
-                    $this->array_fields['password'] = $value;
+                    $this->array_fields['password'] = password_hash($value, PASSWORD_DEFAULT);
 
                     break;
                 case 'fecha_nacimiento':
@@ -156,10 +156,14 @@ class CUser{
     }
 
 
-    public function obtenerUsuario($apodo){
+    public function obtenerUsuario($email){
 
 
-        //$consulta = $this->mysqli->query("SELECT * FROM usuarios WHERE apodo_usuario='".$apodo."'");
+        $stmt = $this->mysqli->prepare("SELECT * FROM usuarios WHERE_email_usuario=?");
+        $stmt->$this->myslq->bind_param("i", $email);
+        $stmt->$this->mysql->execute();
+        $resultado = $stmt->$this->mysqli->get_result();
+        $resultado = $this->mysqli->fetch_assoc();
 
 
 
@@ -185,6 +189,23 @@ class CUser{
 
     }
 
+    public function validaPass($email, $pass)
+    {
+        $stmt = $this->mysqli->prepare("SELECT password_usuario FROM usuarios WHERE email_usuario=?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $resultado = $resultado->fetch_assoc();
+        $passBD = $resultado['password_usuario'];
+
+        //$passLogin = password_hash(base64_encode(hash('sha256', $pass, true)),PASSWORD_DEFAULT);
+
+        if(password_verify($pass, $passBD))
+            return true;
+        else
+            return false;
+
+    }
 
 
 

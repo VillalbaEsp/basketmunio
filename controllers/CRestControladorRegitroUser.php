@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("controlador_prueba.php");
+require_once("RegistroController.php");
 
 $controladorUsuario = new CRestUser();
 
