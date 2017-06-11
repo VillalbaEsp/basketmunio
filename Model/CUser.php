@@ -49,7 +49,7 @@ class CUser{
 
 
 
-    public function setDatosUsuario($array_infos, $codigo=null)
+    public function setDatosUsuario($array_infos)
     {
 
         foreach ($array_infos  as $key => $value){
@@ -94,9 +94,21 @@ class CUser{
         //falta por hacer obtener el codigo de activacion y si esta activada la cuenta qque esto último se hará aparte en otro metodo, también tengo que hacer los get de todo
 
         $this->addUser($this->array_fields);
+
+    }
+
+
+    public function confirmacionUser($codigo=null){
+
         $this->obtenerID();
         $this->activacionUser($codigo);
+
     }
+
+
+
+
+
 
 
     private function activacionUser($codigo){
@@ -104,24 +116,11 @@ class CUser{
 
         if($codigo != null ){
 
-            /*$prueba2 = "UPDATE usuarios SET codigo_activacion_usuario='". $codigo ."' WHERE id_usuario=".$this->array_fields['id'].")";
-            
-
-            $consulta = $this->mysqli->query("UPDATE usuarios SET codigo_activacion_usuario='". $codigo ."' WHERE id_usuario=".$this->array_fields['id']);
-
-            $prueba = $this->mysqli;*/
-
-
             $stmt = $this->mysqli->prepare("UPDATE usuarios SET codigo_activacion_usuario=? WHERE id_usuario=?");
 
             $stmt->bind_param("si",$codigo,$this->array_fields['id']);
 
             $stmt->execute();
-
-
-
-           /*printf($prueba2);
-            die();*/
 
             $this->array_fields['activado'] = 1;
 
