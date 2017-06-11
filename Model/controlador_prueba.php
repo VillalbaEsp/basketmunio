@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once("CUser.php");
 
 class CRestUser{
@@ -57,7 +58,7 @@ class CRestUser{
 
         $this->envioMail();
 
-        $this->confrimacionMail("");
+        //$this->confrimacionMail("");
 
         /* $usuario->obtenerUsuario("aleman324");
 
@@ -79,7 +80,10 @@ class CRestUser{
 
         $asunto = "Activación de tu cuenta en Basketmunio";
 
-        mail($this->email, $asunto, $mensaje);
+        $cabeceras = 'From: basketmunio@gmail.com' . "\r\n" .
+        'Reply-To: basketmunio@gmail.com' . "\r\n";
+
+        mail($this->email, $asunto, $mensaje, $cabeceras);
 
     }
 
