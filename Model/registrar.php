@@ -54,7 +54,7 @@ $mensaje= "¡Te damos la bienvenida a BASKETMUNIO!
 $asunto = "Activación de tu cuenta en Basketmunio";
 
 if(mail($correo,$asunto,$mensaje)){
-    header('Location: ../../view/html/pagina_principal.html');
+    echo "Se ha enviado un mensaje a tu correo electronico con el enlace de activación";
 }else{
     echo "Ha ocurrido un error y no se puede enviar el correo";
 }
