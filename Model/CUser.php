@@ -159,34 +159,31 @@ class CUser{
 
     public function obtenerUsuario($email){
 
+        $stmt = $this->mysqli->prepare("SELECT * FROM usuarios WHERE email_usuario=?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
 
-        $stmt = $this->mysqli->prepare("SELECT * FROM usuarios WHERE_email_usuario=?");
-        $stmt->$this->myslq->bind_param("i", $email);
-        $stmt->$this->mysql->execute();
-        $resultado = $stmt->$this->mysqli->get_result();
-        $resultado = $this->mysqli->fetch_assoc();
+        $info = array();
 
+        $row = $res->fetch_assoc();
 
+        foreach ($row as $key => $value)
+                $info[$key] = $value;
 
-       // $prueba = $this->mysqli;
+        $this->array_fields_registrado['id'] = $info['id_usuario'];
 
+        $this->array_fields_registrado['apodo'] = $info['apodo_usuario'];
 
-       // $resultado=$consulta->fetch_assoc();
+        $this->array_fields_registrado['nombre'] = $info['nombre_usuario'];
 
+        $this->array_fields_registrado['apellidos'] = $info['apellidos_usuario'];
 
-        $this->array_fields_registrado['id'] = $resultado['id_usuario'];
+        $this->array_fields_registrado['email'] = $info['email_usuario'];
 
-        $this->array_fields_registrado['apodo'] = $resultado['apodo_usuario'];
+        $this->array_fields_registrado['password'] = $info['password_usuario'];
 
-        $this->array_fields_registrado['nombre'] = $resultado['nombre_usuario'];
-
-        $this->array_fields_registrado['apellidos'] = $resultado['apellidos_usuario'];
-
-        $this->array_fields_registrado['email'] = $resultado['email_usuario'];
-
-        $this->array_fields_registrado['password'] = $resultado['password_usuario'];
-
-        $this->array_fields_registrado['fecha_nacimiento'] = $resultado['fecha_nacimiento_usuario'];
+        $this->array_fields_registrado['fecha_nacimiento'] = $info['fecha_nacimiento_usuario'];
 
     }
 
@@ -198,8 +195,6 @@ class CUser{
         $resultado = $stmt->get_result();
         $resultado = $resultado->fetch_assoc();
         $passBD = $resultado['password_usuario'];
-
-        //$passLogin = password_hash(base64_encode(hash('sha256', $pass, true)),PASSWORD_DEFAULT);
 
         if(password_verify($pass, $passBD))
             return true;

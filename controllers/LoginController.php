@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 require_once("../model/CUser.php");
 
 class CRestLogin
@@ -29,13 +28,18 @@ class CRestLogin
 
 
 
-    private function loginUsuario()
+    private function loginUsuario($email)
     {
+        session_start();
 
-        $_SESSION['email'] = $_POST['email'];
+        $usuario = new CUser();
 
-        $usuario->obtenerUsuario($this->email);
+        $usuario->obtenerUsuario($email);
 
+        $_SESSION['id_usuario'] = $usuario->get_id();
+
+        header("Location: /basketmunio/view/html/pagina_principal.php");
+        
     }
 
     public function compruebaPass(){
@@ -43,8 +47,8 @@ class CRestLogin
         $usuario = new CUser();
 
         if($usuario->validaPass($this->email, $this->password)) {
-            $_SESSION['email'] = $_POST['email'];
-            die('Sesión establecida!');
+            $email =  $_POST['email'];
+            $this->loginUsuario($email);
         }else {
             die("PA FUERA PRINGAO");
         }
