@@ -7,8 +7,10 @@
         <title>Basketmunio_login</title>
         <link rel="stylesheet" href="../css/estilo_pagina_principal.css"> 
         <link rel="stylesheet" href="../css/fontello.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-        
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <?php
+            session_start();
+        ?>
     </head>
         
     <body> 
@@ -85,11 +87,15 @@
             </nav>
             
             <div id="escoge_equipo"></div>
-            <div id="plantilla_equipo"></div>
+            <div id="plantilla_equipo">
+                <?php
+                    var_dump($_SESSION);
+                ?>
+            </div>
             <div id="ultimas_noticias"></div>
-            
+
         </section>
-        
+
         <footer id="contenedor_footer">
             
             <div id="caja_info">
