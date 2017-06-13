@@ -3,7 +3,7 @@
 
 require_once("RegistroController.php");
 
-$controladorUsuario = new CRestUser();
+$controladorUsuario = new CRestRegistro();
 
 $controladorUsuario->registarUsuario();
 
