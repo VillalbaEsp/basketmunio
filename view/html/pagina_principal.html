@@ -10,7 +10,9 @@
             <script src="../js/jquery-3.1.1.min.js"></script>
             <script src="../js/pagina_principal/pagina__principal.js"></script>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+            <?php
+                session_start();
+            ?>
         </head>
 
         <body>
@@ -53,7 +55,7 @@
 
                     <div id="menu_contenedor_img">
 
-                        <img src="../img/Equipo4-naranja.png">
+                        <img src="../img/logo.png>
 
                     </div>
 
@@ -188,7 +190,9 @@
                 </div>
 
             </div>
-
+            <?php
+                    var_dump($_SESSION);
+                ?>
         </footer>
 
         </body>
