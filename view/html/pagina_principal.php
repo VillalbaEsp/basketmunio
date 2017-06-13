@@ -55,7 +55,7 @@
 
                     <div id="menu_contenedor_img">
 
-                        <img src="../img/logo.png>
+                        <img src="../img/logo.png">
 
                     </div>
 
@@ -190,9 +190,7 @@
                 </div>
 
             </div>
-            <?php
-                    var_dump($_SESSION);
-                ?>
+
         </footer>
 
         </body>

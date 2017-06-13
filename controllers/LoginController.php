@@ -38,7 +38,7 @@ class CRestLogin
 
         $_SESSION['id_usuario'] = $usuario->get_id();
 
-        header("Location: /basketmunio/view/html/pagina_principal.html");
+        header("Location: /basketmunio/view/html/pagina_principal.php");
         
     }
 
