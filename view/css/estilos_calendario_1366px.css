@@ -1,0 +1,208 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+}
+
+
+
+#contenedor_loguin{
+
+    width: 100%;
+    height: 920px;
+    background-size: cover;
+    background-position: center center;
+    /*background:no-repeat fixed center; */
+}
+
+/*MENU----------------------------------------------------------------------------------------------------------------*/
+
+#menu_cabecera{
+    width: 100%;
+    height: 70px;
+    background-color:#004F7C;
+}
+
+/*#menu_cabecera:nth-child(3) {
+    margin-left: 20%;
+}*/
+
+#menu_contenedor_img{
+    width: 150px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0%;
+    padding-left: 4%;
+}
+#menu_dcha{
+    margin-left: 3%;
+    padding-left: 0%;
+}
+.menu_contenedor_ul{
+    z-index: 1000;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 12.5%;
+    font-size: 12px;
+    padding-left: 3%;
+}
+
+#menu_contenedor_img img{
+    width: 200px;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+.menu_contenedor_ul ul {
+    list-style: none;
+}
+
+.menu_contenedor_ul ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu_contenedor_ul ul li:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.menu_contenedor_ul ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+}
+
+
+
+ul li a{
+    margin-right: 10px;
+}
+
+ul li:hover .secundario {
+    display: block;
+}
+
+ul li .secundario {
+    display: none;
+    background-color: #004F7C;
+    position: absolute;
+    width: 150%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*CONTENEDOR TABLA---------------------------------------------------------------------------------------------------*/
+
+#contenedor_tabla{
+
+    width:80%;
+    height: 600px;
+    margin: auto;
+    margin-top: 40px;
+
+}
+
+
+#ligas{
+    width:80%;
+    border: 5px solid #004F7C;
+    margin: auto;
+    color: #004F7C;
+}
+
+#ligas td{
+    text-align: center;
+}
+
+#eleccion_semana{
+    margin: auto;
+    width: 65%;
+    margin-top: 40px;
+    padding-left: 12%;
+    color:#004F7C;
+}
+
+#select_semana{
+    width:30%;
+    height: 40px;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 5%;
+    color:#004F7C;
+}
+
+#select_anio{
+    width:30%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 5%;
+    color:#004F7C;
+
+}
+
+#search_semana{
+    width:10%;
+    height: 50px;
+    margin: 2% 36%;
+    background-color:#22E363;
+    color: white;
+    border: 2px solid #22E363;
+    border-radius: 6px;
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*FOOTER----------------------------------------------------------------------------------------------------------*/
+#contenedor_footer{
+
+    width: 98%;
+    height:17%;
+    background-color: #004F7C;
+    padding: 1%;
+}
+
+#caja_info{
+
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    color: white;
+    font-weight: lighter;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#info{
+
+    width: 70%;
+    height: 90%;
+    margin: 0% 14%;
+    text-align: center;
+
+}
+#info h4{
+    width: 100%;
+}
+
+#info a{
+    color: #22E363;
+    text-decoration: none;
+
+}
+
+#info p{
+    font-size: 13px;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
