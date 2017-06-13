@@ -7,12 +7,14 @@
         <title>Basketmunio_login</title>
         <link rel="stylesheet" href="../css/estilo.css">
         <link rel="stylesheet" href="../css/fontello.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
         <?php
-            start_session();
-            if(isset($_SESSION['id_usuario]))
-                header(pagina_principal.html);
+            session_start();
+            if(isset($_SESSION['id_usuario']))
+                header("Location: /basketmunio/view/html/pagina_principal.php");
         ?>
+
     </head>
         
     <body> 
