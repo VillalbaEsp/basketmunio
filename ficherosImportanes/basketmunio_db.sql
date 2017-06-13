@@ -1,4 +1,9 @@
-﻿create table `usuarios`
+﻿DROP DATABASE IF EXISTS `basketmunio`;
+
+CREATE DATABASE `basketmunio` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `basketmunio`;
+
+create table `usuarios`
 (
   `id_usuario` int not null auto_increment,
   `apodo_usuario` varchar(25) not null,
@@ -22,6 +27,7 @@ alter table `usuarios` add unique `apodo_usuario` (`apodo_usuario`)
 
 alter table `usuarios` add unique `email_usuario` (`email_usuario`)
 ;
+
 
 create table `jugadores`
 (
@@ -96,6 +102,7 @@ create index `ix_relationship31` on `jugadores_equipos` (`id_equipo`,`id_usuario
 create index `ix_relationship32` on `jugadores_equipos` (`id_jugador`)
 ;
 
+
 create table `jugadores_partidos_reales`
 (
   `id_jugador` int(11) not null,
@@ -148,16 +155,22 @@ create table `estadisticas_totales`
 alter table `estadisticas_totales` add  primary key (`id_jugador`)
 ;
 
+
 create table `jugador_libre`
 (
   `id_jugador_libre` int not null auto_increment,
   `id_jugador` int(11),
+  `id_liga` int,
   primary key (`id_jugador_libre`)
 )
 ;
 
 create index `ix_relationship33` on `jugador_libre` (`id_jugador`)
 ;
+
+create index `ix_relationship37` on `jugador_libre` (`id_liga`)
+;
+
 
 create table `mercados`
 (
@@ -209,6 +222,9 @@ alter table `mercados` add constraint `relationship35` foreign key (`id_jugador_
 ;
 
 alter table `mercados` add constraint `relationship36` foreign key (`id_liga`) references `ligas` (`id_liga`) on delete cascade on update cascade
+;
+
+alter table `jugador_libre` add constraint `relationship37` foreign key (`id_liga`) references `ligas` (`id_liga`) on delete cascade on update cascade
 ;
 
 
