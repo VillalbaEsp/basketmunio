@@ -42,6 +42,8 @@ class CEquipo {
 
                 case 'id_usuario':
 
+                    //utilizar el getId
+
                     $this->array_fields['id_usuario'] = $value;
 
                     break;
@@ -88,8 +90,55 @@ class CEquipo {
     }
 
 
+    //ESTA FUNCION ES PRIVADA Y VA DENTRO DE SET EQUIPO
+    public function  creaPlantilla(){
+
+        /*$liga = new CLiga;
+
+        $idLiga= $liga->getId();*/
+
+        $idLiga = 1;
+
+        for($i=0; $i<11; $i++){
+
+            $numero = rand(1, 453);
+
+            //HAY QUE PASARLE EL ID LIGA
+
+            $consulta= $this->mysqli->query("SELECT * FROM jugador_libre WHERE id_liga=".$idLiga."&& id_jugador=".$numero."");
 
 
+            $jugador = $consulta->fetch_assoc();
+
+            $this->array_fields['jugadores_equipo'][$i]=$jugador;
+
+
+        }
+
+
+        $consulta= $this->mysqli->query("SELECT * FROM equipos WHERE id_liga=".$idLiga."&& nombre_equipo='".$this->array_fields['nombre_equipo']."'");
+
+        $equipo = $consulta->fetch_assoc();
+        //var_dump($equipo);
+
+
+        foreach ($this->array_fields['jugadores_equipo'] as $key){
+
+            foreach ($key as $key2 => $value){
+
+                if($key2 == "id_jugador"){
+                    //var_dump($value);
+                    $consulta1 = $this->mysqli->query("INSERT INTO jugadores_equipos (id_equipo, id_usuario, id_jugador) VALUES (".$equipo['id_equipo'].",".$equipo['id_usuario'].",".$value.")");
+
+                }
+
+
+            }
+
+
+        }
+
+    }
 
 
 

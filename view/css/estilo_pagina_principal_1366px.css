@@ -1,0 +1,343 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+}
+
+
+
+#contenedor_loguin{
+
+    width: 100%;
+    height: 100%;/*550px;*/;
+    background-size: cover;
+    background-position: center center;
+    /*background:no-repeat fixed center; */
+
+}
+
+/*MENU----------------------------------------------------------------------------------------------------------------*/
+
+#menu_cabecera{
+    width: 100%;
+    height: 70px;
+    background-color:#004F7C;
+}
+
+/*#menu_cabecera:nth-child(3) {
+    margin-left: 20%;
+}*/
+
+#menu_contenedor_img{
+    width: 150px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0%;
+    padding-left: 4%;
+}
+#menu_dcha{
+    margin-left: 3%;
+    padding-left: 0%;
+}
+.menu_contenedor_ul{
+    z-index: 1000;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 12.5%;
+    font-size: 12px;
+    padding-left: 3%;
+}
+
+#menu_contenedor_img img{
+    width: 200px;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+.menu_contenedor_ul ul {
+    list-style: none;
+}
+
+.menu_contenedor_ul ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu_contenedor_ul ul li:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.menu_contenedor_ul ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+}
+
+
+
+ul li a{
+    margin-right: 10px;
+}
+
+ul li:hover .secundario {
+    display: block;
+}
+
+ul li .secundario {
+    display: none;
+    background-color: #004F7C;
+    position: absolute;
+    width: 150%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*SLIDER----------------------------------------------------------------------------------------------------------*/
+#contenedor_slider{
+    width: 30%;
+    height: 530px;
+    margin: 15px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid orange;
+}
+
+#slider{
+
+    width: 100%;
+    height: 330px;
+    border-left: 5px solid #004F7C;
+    border-right: 5px solid #004F7C;
+}
+
+#slider img{
+    width: 100%;
+    height: 330px;
+}
+
+#titulos{
+    width: 100%;
+    height: 120px;
+    background-color: #004F7C;
+    opacity: 0.97;
+    border-left: 5px solid #004F7C;
+    border-bottom: 5px solid #004F7C;
+    border-right: 5px solid #004F7C;
+}
+
+.titulo{
+    width: 100%;
+    height: 100%;
+    color: white;
+   /* padding-top: 15px;*/
+    font-family: Calibri;
+   /* padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;*/
+}
+
+.titulo p{
+    font-size: 12px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*CONTENIDO PRINCIPAL---------------------------------------------------------------------------------------------*/
+#contenido_principal{
+
+    width: 40%;
+    height: 530px;
+    border: 2px solid red;
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+
+}
+
+.titular{
+    width:100%;
+    height:70px;
+    border:5px solid #004F7C;
+    border-top-right-radius: 18px;
+    background-color: #004F7C;
+}
+
+.titular h1{
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    text-shadow:  2px 2px 3px black;
+}
+
+#titular_equipos{
+    margin-top: 20px;
+}
+
+#jugadores_destacados{
+
+    width: 100%;
+    height: 167px;
+    border-left: 5px solid #004F7C;
+    border-bottom: 5px solid #004F7C;
+    border-right: 5px solid #004F7C;
+    padding-top: 11px;
+}
+
+.jugador_destacado{
+    width: 100%;
+    height: 50px;
+    border: 2px solid black;
+}
+
+#equipos_destacados{
+    width: 100%;
+    height: 167px;
+    border-left: 5px solid #004F7C;
+    border-bottom: 5px solid #004F7C;
+    border-right: 5px solid #004F7C;
+    padding-top: 11px;
+}
+
+.equipo_destacado{
+    width: 100%;
+    height: 50px;
+}
+
+.equipo_destacado h2{
+    font-size: 14px;
+}
+.contenido_equipo_imagen{
+    width:10%;
+    height: 50px;
+    border: 2px solid green;
+    display: inline-block;
+    vertical-align: top;
+}
+.contenido_equipo_imagen img{
+    width: 100%;
+    height: 100%;
+}
+
+.contenido_equipo{
+    width:76%;
+    height: 50px;
+    border: 2px solid red;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-left: 10%;
+}
+.tooltip {
+    background: #004F7C center left 5px no-repeat;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+    color: white;
+    display: none; /* El tooltip por defecto estara oculto */
+    font-size: 0.8em;
+    padding: 10px 10px 10px 35px;
+    max-width: 6000px;
+    position: absolute; /* El tooltip se posiciona de forma absoluta para no modificar el aspezto del resto de la pagina */
+    top: 15px; /* Posicion apartir de la parte superior del primer elemento padre con posicion relativa */
+    left: 100px; /* Posicion apartir de la parte izquierda del primer elemento padre con posicion relativa */
+    z-index: 100; /* Poner un z-index alto para que aparezca por encima del resto de elementos */
+    font-style: italic;
+    color: white;
+    text-shadow:  2px 2px 3px black;
+}
+/*.tooltip:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    z-index: 100;
+    border: 0 solid #22E363;
+    border-bottom: 14px solid transparent;
+    border-left-width: 10px;
+    width: 50%;
+    left: 50%;
+}
+
+.tooltip:before {
+    content: "";
+    position: absolute;
+    border: 0 solid #22E363;
+    bottom: -14px;
+    z-index: 100;
+    border-right-width: 10px;
+    border-bottom: 14px solid transparent;
+    width: 50%;
+    right: 50%;
+}*/
+/*TWEETS---------------------------------------------------------------------------------------------*/
+
+#tweets{
+    width: 20%;
+    height: 530px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+}
+#contenido_tweets{
+    width:100%;
+    height: 452px;
+    border-bottom: 5px solid #004F7C;
+    border-right: 5px solid #004F7C;
+    border-left: 5px solid #004F7C;
+}
+
+/*FOOTER----------------------------------------------------------------------------------------------------------*/
+#contenedor_footer{
+
+    width: 98%;
+    height:17%;
+    background-color: #004F7C;
+    padding: 1%;
+}
+
+#caja_info{
+
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    color: white;
+    font-weight: lighter;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#info{
+
+    width: 70%;
+    height: 90%;
+    margin: 0% 14%;
+    text-align: center;
+
+}
+#info h4{
+ width: 100%;
+}
+
+#info a{
+    color: #22E363;
+    text-decoration: none;
+
+}
+
+#info p{
+    font-size: 13px;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
