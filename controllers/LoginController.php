@@ -23,7 +23,6 @@ class CRestLogin
 
         );
 
-
     }
 
 
@@ -50,7 +49,8 @@ class CRestLogin
             $email =  $_POST['email'];
             $this->loginUsuario($email);
         }else {
-            die("PA FUERA PRINGAO");
+
+            return error;
         }
 
     }
