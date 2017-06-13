@@ -8,7 +8,11 @@
         <link rel="stylesheet" href="../css/estilo.css">
         <link rel="stylesheet" href="../css/fontello.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-        
+        <?
+            start_session();
+            if(isset($_SESSION['id_usuario]))
+                header(pagina_principal.html);
+        >
     </head>
         
     <body> 
@@ -24,7 +28,7 @@
                 
                 <div id="menu_contenedor_img">
                     
-                    <img src="../img/escudos/logo.png">
+                    <img src="../img/logo.png">
                     
                 </div>
 
@@ -75,12 +79,12 @@
                         <p>¿Eres nuevo? | <span id="enlace_registro"><a href="registro.html">Registrate</a></span></p>
                         
                     </hgroup>
-                    
-                    <form id="formulario" method="post">
+
+                    <form id="formulario" method="post" action="../../controllers/CRestControladorLoginUser.php">
 
                         <input type="text" name="email" id="email" id="input_email" placeholder="Correo electronico"><br>
 
-                        <input type="text" name="password" id="input_password" placeholder="Contraseña"><br>
+                        <input type="password" name="password" id="input_password" placeholder="Contraseña" ><br>
                         
                         <div id="enlace_contraseña_olvidada"><a href="contrase%C3%B1a_olvidada.html">¿Has olvidado la contraseña?</a></div>
                         
