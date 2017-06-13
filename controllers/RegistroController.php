@@ -2,7 +2,7 @@
 
 require_once("../model/CUser.php");
 
-class CRestUser{
+class CRestRegistro{
 
 
     private $apodo;
