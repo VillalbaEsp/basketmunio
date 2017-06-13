@@ -1,0 +1,215 @@
+@media only screen and (max-width:1024px) {
+
+     html{
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    body{
+        margin: 0;
+    }
+    
+    #contenedor_loguin{
+
+        width: 100%;
+        height: 650px;
+        background-image:url(../img/ima.jpg);
+        background-size: cover;
+        background-position: center center;
+        /*background:no-repeat fixed center; */
+
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 73px;
+        background-color:#004F7C;
+
+    }
+
+    #menu_contenedor_img{
+        width: 400px;
+        height: 73px;
+        display: inline-block;
+        vertical-align: top;
+         margin-left: 37%; 
+
+    }
+
+
+    #menu_contenedor_img img{
+        width: 50%;
+        height: 100%;
+        opacity: 1;
+    }
+
+    
+    #menu-bar{
+        display:none;
+    }
+    
+    #menu-bar:checked ~ #menu_contenedor_ul{
+        transform: translateX(0%);
+    }
+    
+    #menu_cabecera label{
+        
+        display: inline-block;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+        
+    }
+    
+    #menu_contenedor_ul{
+        position: absolute;
+        top: 73px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,79,124,0.9); 
+        transition: all 0.5s;
+        transform: translateX(-100%);
+    }
+    
+    #menu_contenedor_ul ul {
+        list-style: none;
+    
+    }
+
+    #menu_contenedor_ul ul li {
+        display: block;
+    }
+
+    #menu_contenedor_ul ul li:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
+    
+    #menu_contenedor_ul ul li a {
+        color: white;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+    
+    #form_loguin{
+
+        width: 58%;
+        height: 70%;/*350px;*/
+        margin: auto;
+        margin-top: 7%;
+    }
+
+    #contenido_form{
+        width: 50%;
+        height: 90%;
+        margin: auto;
+        color: white;
+        font-size: 28px;
+        font-family: 'Roboto', sans-serif;
+    }
+    #contenido_form hgroup{
+
+        text-align: center;
+    }
+
+    #contenido_form hgroup h4{
+
+        font-weight: lighter;
+    }
+
+    #contenido_form p{
+
+        font-size: 16px;
+        margin-top: 5px;
+
+    }
+
+    #contenido_form #enlace_registro a{
+
+        color: #22E363;
+        text-decoration:none; 
+
+    }
+
+    #contenido_form input{
+        width: 100%;
+        height: 30px;
+        margin-top: 2%;
+    }
+
+    #contenido_form #button_loguin{
+
+        width:20%;
+        min-width: 80px;
+        height: 50px;
+        margin: 5% 39%;
+        background-color:#22E363;
+        color: white;
+        border: 2px solid #22E363;
+        border-radius: 6px;
+
+    }
+
+    #enlace_contraseña_olvidada{
+        font-size: 16px;
+    }
+
+    #enlace_contraseña_olvidada a{
+        color: #22E363;
+        text-decoration:none; 
+    }
+
+    #contenedor_footer{
+
+        width: 98%;
+        height:17%;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+    #caja_info{
+
+        width: 70%;
+        height: 90%;
+        margin: auto;
+        color: white;
+        font-weight: lighter;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    #info{
+
+        width: 70%;
+        height: 90%;
+        margin: 0% 14%;
+        text-align: center;
+
+    }
+    #info h4{
+     width: 100%;   
+    }
+
+    #info a{
+        color: #22E363;
+        text-decoration: none;
+
+    }
+
+    #info p{
+        font-size: 13px;
+    }   
+
+
+    
+    
+    
+    
+}
+
+

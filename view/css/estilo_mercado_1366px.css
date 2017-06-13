@@ -1,0 +1,270 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+}
+
+
+
+#contenedor_loguin{
+
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: center center;
+    /*background:no-repeat fixed center; */
+}
+
+/*MENU----------------------------------------------------------------------------------------------------------------*/
+
+#menu_cabecera{
+    width: 100%;
+    height: 70px;
+    background-color:#004F7C;
+}
+
+/*#menu_cabecera:nth-child(3) {
+    margin-left: 20%;
+}*/
+
+#menu_contenedor_img{
+    width: 150px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0%;
+    padding-left: 2%;
+}
+#menu_dcha{
+    margin-left: 3%;
+    padding-left: 0%;
+}
+.menu_contenedor_ul{
+    z-index: 1000;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 12.5%;
+    font-size: 12px;
+    padding-left: 3%;
+}
+
+#menu_contenedor_img img{
+    width: 200px;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+.menu_contenedor_ul ul {
+    list-style: none;
+}
+
+.menu_contenedor_ul ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu_contenedor_ul ul li:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.menu_contenedor_ul ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+}
+
+
+
+ul li a{
+    margin-right: 10px;
+}
+
+ul li:hover .secundario {
+    display: block;
+}
+
+ul li .secundario {
+    display: none;
+    background-color: #004F7C;
+    position: absolute;
+    width: 150%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*CAJA PLANTILLA--------------------------------------------------------------------------------------------------*/
+
+#caja_contenido{
+
+    width: 100%;
+    height: 630px;
+    margin-top: 50px;
+}
+.titular{
+    width:100%;
+    height:70px;
+    border:5px solid #004F7C;
+    border-top-right-radius: 18px;
+    background-color: #004F7C;
+}
+
+.titular h1{
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    text-shadow:  2px 2px 3px black;
+}
+
+#titular_equipos{
+    margin-top: 20px;
+}
+
+#caja_jugadores{
+
+    width: 28%;
+    height: 580px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2%;
+    border: 10px solid #004F7C;
+    border-top-right-radius: 30px;
+}
+
+#caja_jugadores ul{
+    margin-left: 0px;
+}
+
+
+/*#caja_jugadores li{
+
+    list-style: none;
+    width: 100%;
+    height: 41.5px;
+    border: 2px solid black;
+
+
+}*/
+.fila_caja_jugador{
+    width: 100px;
+    height: 40px;
+    list-style: none;
+    border: 2px solid black;
+}
+/*----------------------------------------------------------------------------------------------------------------*/
+/*MERCADO---------------------------------------------------------------------------------------------------------*/
+#caja_mercado{
+
+    width: 60%;
+    height: 580px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2%;
+    border: 10px solid #004F7C;
+    border-top-right-radius: 30px;
+
+}
+.titular{
+    width:100%;
+    height:70px;
+    border:5px solid #004F7C;
+    border-top-right-radius: 18px;
+    background-color: #004F7C;
+}
+
+.titular h1{
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    text-shadow:  2px 2px 3px black;
+}
+
+#contenido_mercado{
+    width: 100%;
+    height: 500px;
+}
+
+.fila{
+    width: 100%;
+    height: 40px;
+    border: 2px solid greenyellow;
+    list-style: none;
+}
+
+/*.añadir img{
+    width: 100%;
+    height: 100%;
+
+}*/
+.añadir{
+    display: none;
+}
+
+.eliminar{
+    display: none;
+}
+
+.icon-plus-circle{
+    color: #22E363;
+}
+
+.icon-minus-circle{
+    display: none;
+    color: red;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*FOOTER----------------------------------------------------------------------------------------------------------*/
+#contenedor_footer{
+
+    width: 98%;
+    height:17%;
+    background-color: #004F7C;
+    padding: 1%;
+}
+
+#caja_info{
+
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    color: white;
+    font-weight: lighter;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#info{
+
+    width: 70%;
+    height: 90%;
+    margin: 0% 14%;
+    text-align: center;
+
+}
+#info h4{
+    width: 100%;
+}
+
+#info a{
+    color: #22E363;
+    text-decoration: none;
+
+}
+
+#info p{
+    font-size: 13px;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
