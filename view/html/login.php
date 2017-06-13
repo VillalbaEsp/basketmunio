@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/estilo.css">
         <link rel="stylesheet" href="../css/fontello.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="../js/jquery-3.1.1.min.js"></script>
 
         <?php
             session_start();
@@ -82,15 +83,15 @@
                         
                     </hgroup>
 
-                    <form id="formulario" method="post" action="../../controllers/CRestControladorLoginUser.php">
+                    <form id="formulario">
 
-                        <input type="text" name="email" id="email" id="input_email" placeholder="Correo electronico"><br>
+                        <input type="email" name="email" id="email" id="email" placeholder="Correo electronico"><br>
 
-                        <input type="password" name="password" id="input_password" placeholder="Contraseña" ><br>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" ><br>
                         
                         <div id="enlace_contraseña_olvidada"><a href="contrase%C3%B1a_olvidada.html">¿Has olvidado la contraseña?</a></div>
                         
-                        <input type="submit" name="envio_loguin" id="button_loguin" value="JUGAR">
+                        <input type="button" name="envio_loguin" id="button_loguin" value="JUGAR">
 
                     </form>
                     
@@ -124,7 +125,28 @@
         
     </body>
 
+        <script>
+            $("#button_loguin").click(function (e) {
 
-	
-				
+                var email =$("#email").val();
+
+                var password = $("#password").val();
+                console.log(email +"-----"+ password);
+                $.post("../../controllers/CRestControladorLoginUser.php/compruebaPass", {email: email, password: password}, function($res) {
+                alert($res)});
+                /*$.ajax({
+                    url: '../../controllers/CRestControladorLoginUser.php/compruebaPass',
+                    type: 'POST',
+                    data: {email: email, password: password},
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        alert("CONTRASEÑA CORRECTA");
+                    },
+                    error: function () {
+                        alert("CONTRASEÑA INCORRECTA");
+                    }
+                });*/
+            });
+        </script>
+
 	</html>
