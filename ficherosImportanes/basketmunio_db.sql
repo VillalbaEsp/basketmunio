@@ -41,6 +41,7 @@ create table `jugadores`
 ) engine = innodb
 ;
 
+
 create table `ligas`
 (
   `id_liga` int not null auto_increment,
@@ -54,6 +55,7 @@ pv: privado',
 ) engine = innodb
 ;
 
+
 create table `partidos_reales`
 (
   `id_partido` int not null auto_increment,
@@ -64,6 +66,7 @@ create table `partidos_reales`
   primary key (`id_partido`)
 ) engine = innodb
 ;
+
 
 create table `equipos`
 (
@@ -85,6 +88,7 @@ create index `ix_relationship30` on `equipos` (`id_liga`)
 
 alter table `equipos` add unique `nombre_equipo` (`nombre_equipo`)
 ;
+
 
 create table `jugadores_equipos`
 (
@@ -129,6 +133,7 @@ create table `jugadores_partidos_reales`
 alter table `jugadores_partidos_reales` add  primary key (`id_partido`,`id_jugador`)
 ;
 
+
 create table `estadisticas_totales`
 (
   `id_jugador` int(11) not null,
@@ -172,25 +177,6 @@ create index `ix_relationship37` on `jugador_libre` (`id_liga`)
 ;
 
 
-create table `mercados`
-(
-  `id_mercado` int not null auto_increment,
-  `id_jugador_libre` int,
-  `id_jugador_equipo` int,
-  `id_liga` int,
-  primary key (`id_mercado`)
-)
-;
-
-create index `ix_relationship34` on `mercados` (`id_jugador_libre`)
-;
-
-create index `ix_relationship35` on `mercados` (`id_jugador_equipo`)
-;
-
-create index `ix_relationship36` on `mercados` (`id_liga`)
-;
-
 alter table `equipos` add constraint `tiene` foreign key (`id_usuario`) references `usuarios` (`id_usuario`) on delete cascade on update cascade
 ;
 
@@ -213,15 +199,6 @@ alter table `jugadores_equipos` add constraint `relationship32` foreign key (`id
 ;
 
 alter table `jugador_libre` add constraint `relationship33` foreign key (`id_jugador`) references `jugadores` (`id_jugador`) on delete cascade on update cascade
-;
-
-alter table `mercados` add constraint `relationship34` foreign key (`id_jugador_libre`) references `jugador_libre` (`id_jugador_libre`) on delete cascade on update cascade
-;
-
-alter table `mercados` add constraint `relationship35` foreign key (`id_jugador_equipo`) references `jugadores_equipos` (`id_jugador_equipo`) on delete cascade on update cascade
-;
-
-alter table `mercados` add constraint `relationship36` foreign key (`id_liga`) references `ligas` (`id_liga`) on delete cascade on update cascade
 ;
 
 alter table `jugador_libre` add constraint `relationship37` foreign key (`id_liga`) references `ligas` (`id_liga`) on delete cascade on update cascade
