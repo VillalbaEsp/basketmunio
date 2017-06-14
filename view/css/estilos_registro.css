@@ -132,6 +132,10 @@ form input {
     margin-left: 40%;
 }
 
+.error {
+    border: 2px solid red;
+}
+
 footer{
     
     width: 98%;
@@ -175,4 +179,5 @@ footer{
 #info p{
     font-size: 13px;
     
-}*/
+}
+
