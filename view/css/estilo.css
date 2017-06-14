@@ -35,7 +35,7 @@ body{
     height: 100%;
     display: inline-block;
     vertical-align: top;
-     margin-left: 45%; 
+    margin-left: 43%; 
 
 }
 
@@ -147,6 +147,20 @@ ul li .secundario {
     color: white;
     border: 2px solid #22E363;
     border-radius: 6px;
+    
+}
+
+#contenido_form #msg_error{
+    
+    width:70%;
+    height: 50px;
+    margin: 0% 14%;
+    padding-top: 24px;
+    background-color:rgba(255,0,0, 0.4) ;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
     
 }
 
