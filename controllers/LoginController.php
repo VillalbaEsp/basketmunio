@@ -49,8 +49,7 @@ class CRestLogin
             $email =  $_POST['email'];
             $this->loginUsuario($email);
         }else {
-
-            return error;
+            header("Location: /basketmunio/view/html/login.php?error");
         }
 
     }
