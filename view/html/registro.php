@@ -8,7 +8,9 @@
             <title>Basketmunio_registro</title>
             <link rel="stylesheet" href="../css/estilos_registro.css">
             <link rel="stylesheet" href="../css/fontello.css">
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+            <script src="../js/jquery-3.1.1.min.js"></script>
+            <script src="../js/validaFormRegistro.js"></script>
 
         </head>
 
