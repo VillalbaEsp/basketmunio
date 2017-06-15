@@ -20,7 +20,7 @@ function validaApodo(){
         return false;
     }
     //SI longitud pero NO solo caracteres A-z  
-    else if(!inputApodo.val().match(/^[0-9a-zA-Z]+$/)){
+    else if(!inputApodo.val().match(/^[0-9a-zA-Záéíóúñüàè]+$/)){
         inputApodo.addClass("error");
         return false;
     }
@@ -38,7 +38,7 @@ function validaNombre(){
         return false;
     }
     //SI longitud pero NO solo caracteres A-z  
-    else if(!inputNombre.val().match(/^[a-zA-Z]+$/)){
+    else if(!inputNombre.val().match(/^[a-zA-Záéíóúñüàè]+$/)){
         inputNombre.addClass("error");
         return false;
     }
@@ -55,7 +55,7 @@ function validaApellidos(){
         return false;
     }
     //SI longitud pero NO solo caracteres A-z
-    else if(!inputApellidos.val().match(/^[a-zA-Z\s]+$/)){
+    else if(!inputApellidos.val().match(/^[a-zA-Záéíóúñüàè\s]+$/)){
         inputApellidos.addClass("error");
         return false;
     }

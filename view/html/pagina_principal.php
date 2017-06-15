@@ -12,6 +12,9 @@
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             <?php
                 session_start();
+            if(!isset($_SESSION['id_usuario']))
+                header("Location: /basketmunio/view/html/login.php");
+
             ?>
         </head>
 
