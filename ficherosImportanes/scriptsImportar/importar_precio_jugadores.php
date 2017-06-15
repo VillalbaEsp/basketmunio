@@ -63,7 +63,7 @@ if ($myBBDD) {
         $resultado .= "Para el jugador con ID " . $id . " su precio es de " . $precio . "<br>";
 
     }
-    fclose($fichero);
+
     echo "<h3>Datos</h3><br>".$resultado;
 
 }else{

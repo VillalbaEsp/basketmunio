@@ -76,7 +76,7 @@ create table `equipos`
   `nombre_equipo` varchar(20) not null,
   `escudo_equipo` varchar(22) not null
  comment 'ejemplo: equipo4-amarillo.png',
-  `presupuesto_equipo` int not null default 100000000,
+  `presupuesto_equipo` int not null default 60000000,
   `pts_equipo` int not null default 0
  comment 'puntos equipo',
   primary key (`id_equipo`,`id_usuario`)

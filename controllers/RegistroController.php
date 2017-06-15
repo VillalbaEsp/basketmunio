@@ -57,13 +57,17 @@ class CRestRegistro{
 
         $this->envioMail();
 
-        //$this->confrimacionMail("");
+    }
 
-        /* $usuario->obtenerUsuario("aleman324");
+    public function compruebaUsuario(){
 
-         printf($usuario->get_id());
+        $usuario = new CUser();
 
-         printf($usuario->get_apodo());*/
+        if($usuario->getCompruebaUsuario($this->apodo, $this->email) == true)
+            return true;
+        else
+            return false;
+
     }
 
 
@@ -86,7 +90,7 @@ class CRestRegistro{
 
     }
 
-    private function confrimacionMail($respuesta){
+    private function confirmacionMail($respuesta){
 
         $usuario = new CUser();
 
