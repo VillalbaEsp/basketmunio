@@ -1,3 +1,14 @@
+
+
+@import url(css/estilo_loguin_1024px.css);
+
+
+
+
+
+
+@media only screen and (mim-width: 1920px) {
+    
 html{
     width: 100%;
     height: 100%;
@@ -141,6 +152,7 @@ ul li .secundario {
 #contenido_form #button_loguin{
     
     width:20%;
+    min-width: 80px;
     height: 50px;
     margin: 5% 39%;
     background-color:#22E363;
@@ -152,13 +164,9 @@ ul li .secundario {
 
 #enlace_contraseña_olvidada{
     font-size: 16px;
-    margin: 2% 30%;
-
-    
 }
 
 #enlace_contraseña_olvidada a{
-    
     color: #22E363;
     text-decoration:none; 
 }
@@ -207,18 +215,68 @@ ul li .secundario {
 
 
 
-@media only screen and (mim-width: 1920px) {
-    body {
-        border: 2px solid red;
-    }
-}
-
 
 @media only screen and (max-width: 1920px){
     
-    body{
-        
-        
+    
+    
+    #menu_cabecera{
+        width: 100%;
+        height: 73px;
+        background-color:#004F7C;
+  
     }
+    
+    #menu_contenedor_ul{
+        z-index: 1000;
+        width: 34.0%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 0%;
+    }
+    
+    
+    #menu_contenedor_ul ul li a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        padding-right:10px;
+        padding-top: 15px;
+        padding-left: 3%;
+    }
+    
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 140%;
+    }
+    
+    #form_loguin{
+        width: 58%;
+        height: 70%;/*350px;*/
+        margin: auto;
+        margin-top: 6%;
+    }
+    
+    
+    
+    #contenido_form{
+        width: 50%;
+        height: 90%;
+        margin: auto;
+        color: white;
+        font-size: 28px;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #enlace_contraseña_olvidada{
+        width: 46%;
+        margin: auto;
+        margin-top: 4%;
+        font-size: 16px;
+    }
+    
     
 }

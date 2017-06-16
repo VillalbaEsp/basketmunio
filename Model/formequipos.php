@@ -13,7 +13,7 @@
         </head>
 
  <body>
-<form id="formulario" action="controlador_prueba_equipo.php"  method="post">
+<form id="formulario" action="../controllers/CRestControladorAddEquipo.php"  method="post">
 
                        <label for="input_nombre_equipo">Nombre Equipo:</label>
                        <input type="text" name="nombre_equipo" id="input_nombre_equipo" placeholder="Nombre">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 	<html>
@@ -13,7 +14,7 @@
         </head>
 
  <body>
-<form id="formulario" action="CRestControladorUser.php" method="post">
+<form id="formulario" action="CRestControladorUser.php"  method="post">
 
                        <label for="input_apodo">Apodo:</label>
                        <input type="text" name="apodo" id="input_apodo" placeholder="Apodo">
