@@ -13,18 +13,19 @@
             <script src="../js/registro/codigoActivacion.js"></script>
         <?php
 
-        if(!isset($_GET["error"])) {
-            $display = "display: none;";
+        if(isset($_GET["error"])) {
+            $displayError = "display: block;";
+            $form = "display:block";
         }else {
-            $display = "display: block;";
-            $msg = "error";
+            $displayError = "display: none;";
         }
 
-        if(!isset($_GET["succes"])) {
-            $display = "display: none;";
+        if(isset($_GET["success"])) {
+            $displaySucces = "display: block;";
+            $form = "display:none";
         }else {
-            $display = "display: block;";
-            $msg = "success";
+            $displaySucces = "display: none;";
+            $form = "display:block";
         }
 
         ?>
@@ -48,10 +49,10 @@
                 
                 <div id="contenedor_form_registro">
 
-                    <div id="msg_error" style="<?php echo $display ?>;">Código incorrecto.</div>
-                    <div id="msg_success" style="<?php echo $display ?>;">Cuenta activada correctamente.</div>
+                    <div id="msg_error" style="<?php echo $displayError ?>;">Código incorrecto.</div>
+                    <div id="msg_success" style="<?php echo $displaySucces ?>;">Cuenta activada correctamente.</div>
 
-                <div id="form_registro">
+                <div id="form_registro" style="<?php echo $form?>">
                 
                    <form id="formulario">
 

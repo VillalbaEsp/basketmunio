@@ -7,18 +7,12 @@ $controladorUsuario = new CRestRegistro();
 
 if($_POST['ejecuta'] == "activaUser"){
     if($controladorUsuario->activaUser()) {
-        $info = array(
-            'validar'=>"true",
-        );
-        echo json_encode($info);
+        //echo 1;
+        echo json_encode(array('success'=>'true'));
     }else {
-        $info = array(
-            'validar'=>"false",
-        );
-        echo json_encode($info);
+        echo 0;
     }
 }
-
 if(!$controladorUsuario->compruebaUsuario() == true) {
     header("Location: /basketmunio/view/html/registro.php?error");
 }else {

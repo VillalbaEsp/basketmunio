@@ -65,7 +65,7 @@ class CRestRegistro{
 
         $usuario = new CUser();
 
-        $this->datos['codigo'] = $this->generarCodigo(6);
+        $this->datos['codigo'] = $this->generarCodigo(12);
 
         $usuario->setDatosUsuario($this->datos);
 
@@ -140,6 +140,7 @@ class CRestRegistro{
         $pattern = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $max = strlen($pattern)-1;
         for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+        //$key = uniqid();
         return $key;
   }
 

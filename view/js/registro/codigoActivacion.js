@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#button_registro").click(function() {
+    $("#button_registro").click(function(e) {
 
         var codigo = $("#input_codigo").val();
 
@@ -7,13 +7,17 @@ $(document).ready(function(){
             type: 'POST',
             url: "../../controllers/CRestControladorRegistroUser.php",
             data: {codigo: codigo, ejecuta: "activaUser"},
-            dataType: "JSON",
-            success: function (res) {
-                alert(res.validar);
-                if(res.validar == "true")
+            dataType: 'json',
+            success: function (data) { //true
+                if(data.success == true){
+                    alert('success');
                     window.location.href = "registro-correcto.php?success";
-                else
-                    window.location.href = "registro-correcto.php?error";
+                }
+
+            },
+
+            error: function (data) { //false
+                window.location.href = "registro-correcto.php?error";
             }
         });
     });
