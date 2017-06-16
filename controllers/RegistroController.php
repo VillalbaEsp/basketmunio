@@ -23,15 +23,26 @@ class CRestRegistro{
 
     public function __construct()
     {
+        if(isset($_POST['apodo']))
+            $this->apodo = $_POST['apodo'];
 
-        $this->apodo = $_POST['apodo'];
-        $this->nombre = $_POST['nombre'];
-        $this->apellidos = $_POST['apellidos'];
-        $this->email = $_POST['correo'];
-        $this->password = $_POST['password'];
-        $this->fecha = $_POST['f_nacimiento'];
+        if(isset($_POST['nombre']))
+            $this->nombre = $_POST['nombre'];
 
-        $this->codigo = "";
+        if(isset($_POST['apellidos']))
+            $this->apellidos = $_POST['apellidos'];
+
+        if(isset($_POST['correo']))
+            $this->email = $_POST['correo'];
+
+        if(isset($_POST['password']))
+            $this->password = $_POST['password'];
+
+        if(isset($_POST['f_nacimiento']))
+            $this->fecha = $_POST['f_nacimiento'];
+
+        if(isset($_POST['codigo']))
+            $this->codigo = $_POST['codigo'];
 
 
         $this->datos = array(
@@ -41,7 +52,8 @@ class CRestRegistro{
             'apellidos' => $this->apellidos,
             'email' => $this->email,
             'password' => $this->password,
-            'fecha_nacimiento' => $this->fecha
+            'fecha_nacimiento' => $this->fecha,
+            'codigo' => ''
 
         );
 
@@ -49,14 +61,32 @@ class CRestRegistro{
     }
 
 
-    public function registarUsuario(){
+    public function registrarUsuario(){
 
         $usuario = new CUser();
 
+        $this->datos['codigo'] = $this->generarCodigo(6);
+
         $usuario->setDatosUsuario($this->datos);
 
+        // Envia email de activacion y devuelve el codigo de activacion
         $this->envioMail();
 
+        if($usuario->setCodigoActivacion($this->codigo))
+            return true;
+        else
+            return false;
+
+    }
+
+    public function activaUser(){
+
+        $usuario = new CUser();
+
+        if($usuario->setActivaUsuario($this->codigo))
+            return true;
+        else
+            return false;
     }
 
     public function compruebaUsuario(){
@@ -73,13 +103,12 @@ class CRestRegistro{
 
     private function envioMail(){
 
-        $this->codigo = $this->generarCodigo(6);
-
 
         $mensaje = "¡Te damos la bienvenida a BASKETMUNIO!
 	Esta a solo un paso de poder jugar en la plataforma, para ello deberas activar tu cuenta introduciendo el código en el siguiente enlace:
 
-	 Introduce el siguiente código en el enlace: "  . $this->codigo;
+	 Introduce el siguiente código en el enlace: "  . $this->codigo.
+        "http://www.basketmunio.esy.es/view/html/registro-correcto.php";
 
         $asunto = "Activación de tu cuenta en Basketmunio";
 
@@ -108,7 +137,7 @@ class CRestRegistro{
 
   private function generarCodigo($longitud) {
         $key = '';
-        $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+        $pattern = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $max = strlen($pattern)-1;
         for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
         return $key;

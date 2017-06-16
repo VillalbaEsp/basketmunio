@@ -5,12 +5,12 @@
         <head>
             
             <meta charset="utf-8">
-            <title>Basketmunio_registro</title>
+            <title>Basketmunio</title>
             <link rel="stylesheet" href="../css/estilos_registro.css">
             <link rel="stylesheet" href="../css/fontello.css">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
             <script src="../js/jquery-3.1.1.min.js"></script>
-            <script src="../js/validaFormRegistro.js"></script>
+            <script src="../js/registro/codigoActivacion.js"></script>
         <?php
 
         if(!isset($_GET["error"])) {
@@ -18,6 +18,13 @@
         }else {
             $display = "display: block;";
             $msg = "error";
+        }
+
+        if(!isset($_GET["succes"])) {
+            $display = "display: none;";
+        }else {
+            $display = "display: block;";
+            $msg = "success";
         }
 
         ?>
@@ -41,16 +48,17 @@
                 
                 <div id="contenedor_form_registro">
 
-                    <div id="msg_error" style="<?php echo $display ?>;">Apodo o correo electrónico ya registrado.</div>
-                
+                    <div id="msg_error" style="<?php echo $display ?>;">Código incorrecto.</div>
+                    <div id="msg_success" style="<?php echo $display ?>;">Cuenta activada correctamente.</div>
+
                 <div id="form_registro">
                 
-                   <form id="formulario" method="post" action="../../controllers/CRestControladorRegistroUser.php" >
+                   <form id="formulario">
 
                        <label for="input_registrado" id="label_registrado">Se ha registrado correctamente, en unos momentos le llegara un email de confirmación, por favor intoduce el código de activación para activar la cuenta: </label>
-                       <input type="text" name="cactivacion" id="input_registrado" required >
+                       <input type="text" name="codigo" id="input_codigo" required >
                     
-                       <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
+                       <input type="button" name="envio_codigo" id="button_registro" value="Enviar">
 
                    </form>
                 
