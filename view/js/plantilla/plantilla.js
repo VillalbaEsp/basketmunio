@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
     $.ajax({
         type: 'POST',
-        url: "../../controllers/CRestControladorAddEquipo.php",
+        url: "../../controllers/CRestControladorEquipo.php",
         data: {metodo: "misEquipos"},
         dataType: "json",
         success: function (data) {
@@ -19,7 +19,7 @@ $( "#select_equipo select" ).change(function () {
 
     $.ajax({
         type: 'POST',
-        url: "../../controllers/CRestControladorAddEquipo.php",
+        url: "../../controllers/CRestControladorEquipo.php",
         data: {metodo: "muestraInfo", idEquipo: idEquipo},
         dataType: "json",
         success: function (data) {

@@ -8,7 +8,7 @@ $( document ).ready(function() {
         console.log("hola");
         $.ajax({
             type: 'POST',
-            url: "../../controllers/CRestControladorAddLiga.php", //hay que poner 2 ../ por que aqui no tengo la estructura view
+            url: "../../controllers/CRestControladorLiga.php", //hay que poner 2 ../ por que aqui no tengo la estructura view
             data: {search : search, ejecutar : "muestraLiga"},
             dataType:"json",
             success: function(data) {
@@ -82,7 +82,7 @@ $( document ).ready(function() {
 
        $.ajax({
            type: 'POST',
-           url: "../../controllers/CRestControladorAddLiga.php",
+           url: "../../controllers/CRestControladorLiga.php",
            data: {nombre_liga : nombreLiga,tipo_liga : tipoLiga, password : passwordLiga ,ejecutar : "creaLiga"},
            dataType: "json",
            // Mostramos un mensaje con la respuesta de PHP
