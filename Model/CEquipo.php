@@ -7,6 +7,8 @@ class CEquipo {
 
     private $array_fields;
 
+    private $listaBorrados;
+
 
     public function __construct()
     {
@@ -17,25 +19,22 @@ class CEquipo {
 
         $this->array_fields= array(
             'id_usuario'        => '',
+            'id_liga'           => '',
             'nombre_equipo'     => '',
             'escudo'            => '',
             'presupuesto'       => '',
             'pts_equipo'        => '',
-            'jugadores_equipos' => array()
+            'jugadores_equipos' => array(),
 
 
         );
+
+        $this-> listaBorrados = array();
     }
 
 
     public function setEquipo($array_infos){
 
-/*
-        $usuario = new CUser();
-
-        $this->array_fields['id_usuario'] = $usuario->get_id();
-
-*/
         foreach ($array_infos as $key => $value){
 
             switch ($key){
@@ -47,17 +46,22 @@ class CEquipo {
                     $this->array_fields['id_usuario'] = $value;
 
                     break;
+            /*Añadido */case 'id_liga':
+
+                    $this->array_fields['id_liga'] = $value;
+
+                    break;
                 case 'nombre_equipo':
 
                     $this->array_fields['nombre_equipo'] = $value;
 
                     break;
-                case 'escudo':
+                case 'escudo_equipo':
 
                     $this->array_fields['escudo'] = $value;
 
                     break;
-                case 'pts_equipo':
+                case 'puntos_equipo':
 
                     $this->array_fields['pts_equipo'] = $value;
 
@@ -66,12 +70,16 @@ class CEquipo {
             }
 
 
+
+
         }
 
         /*var_dump($this->array_fields);
         die();*/
 
         $this->addEquipo($this->array_fields);
+        $this->creaPlantilla();
+        $this->borraJugadorsLibre();
 
     }
 
@@ -79,8 +87,8 @@ class CEquipo {
     private function addEquipo($array_fields){
         $idliga = 1;
         $stmt = $this->mysqli->prepare("INSERT INTO equipos (id_usuario,id_liga, nombre_equipo, escudo_equipo, pts_equipo) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("iissi", $this->array_fields['id_usuario'], $idliga, $this->array_fields['nombre_equipo'], $this->array_fields['escudo'], $this->array_fields['pts_equipo']);
-
+        $stmt->bind_param("iissi", $this->array_fields['id_usuario'], $this->array_fields['id_liga'], $this->array_fields['nombre_equipo'], $this->array_fields['escudo'], $this->array_fields['pts_equipo']);
+                                                                       /*AÑADIDO*/
         $stmt->execute();
 
         //$prueba = $this->mysqli;
@@ -90,36 +98,77 @@ class CEquipo {
     }
 
 
+    private function ListaBorrados(){
+
+        //$idLiga = 1;
+
+        $consulta= $this->mysqli->query("SELECT je.id_jugador FROM jugadores_equipos je, equipos e WHERE je.id_equipo=e.id_equipo AND e.id_liga =".$this->array_fields['id_liga']);
+                                                                                                                                                            /*AÑADIDO*/
+
+        //$arrayres=array();
+
+
+        /*var_dump($arrayres);
+        die();*/
+
+        while($resultado = $consulta->fetch_assoc()){
+            $fila = $resultado['id_jugador'];
+
+            array_push($this->listaBorrados,$fila);
+
+
+        }
+
+        var_dump($this->listaBorrados);
+
+
+    }
+
+
+
+
     //ESTA FUNCION ES PRIVADA Y VA DENTRO DE SET EQUIPO
-    public function  creaPlantilla(){
+    private function  creaPlantilla(){
 
         /*$liga = new CLiga;
 
         $idLiga= $liga->getId();*/
-
+        $this->ListaBorrados();
         $idLiga = 1;
+        $i = 0;
 
-        for($i=0; $i<11; $i++){
+        while($i<11) {
 
-            $numero = rand(1, 453);
-
+            $numero = mt_rand(1, 453);
             //HAY QUE PASARLE EL ID LIGA
+            //$numero = 5;
+            if(!in_array($numero , $this->listaBorrados)){
 
-            $consulta= $this->mysqli->query("SELECT * FROM jugador_libre WHERE id_liga=".$idLiga."&& id_jugador=".$numero."");
+
+                $consulta= $this->mysqli->query("SELECT * FROM jugador_libre WHERE id_liga=".$idLiga."&& id_jugador=".$numero."");
 
 
-            $jugador = $consulta->fetch_assoc();
+                $jugador = $consulta->fetch_assoc();
 
-            $this->array_fields['jugadores_equipo'][$i]=$jugador;
+                $this->array_fields['jugadores_equipo'][$i]=$jugador;
+
+                $i++;
+
+            }
 
 
         }
 
 
-        $consulta= $this->mysqli->query("SELECT * FROM equipos WHERE id_liga=".$idLiga."&& nombre_equipo='".$this->array_fields['nombre_equipo']."'");
-
+        $consulta= $this->mysqli->query("SELECT * FROM equipos WHERE id_liga=".$this->array_fields['id_liga']."&& nombre_equipo='".$this->array_fields['nombre_equipo']."'");
+                                                                                /*AÑADIDO*/
         $equipo = $consulta->fetch_assoc();
         //var_dump($equipo);
+
+
+/*var_dump($this->array_fields['jugadores_equipo'][0]['id_jugador']);
+        die();*/
+
 
 
         foreach ($this->array_fields['jugadores_equipo'] as $key){
@@ -127,6 +176,8 @@ class CEquipo {
             foreach ($key as $key2 => $value){
 
                 if($key2 == "id_jugador"){
+
+
                     //var_dump($value);
                     $consulta1 = $this->mysqli->query("INSERT INTO jugadores_equipos (id_equipo, id_usuario, id_jugador) VALUES (".$equipo['id_equipo'].",".$equipo['id_usuario'].",".$value.")");
 
@@ -135,13 +186,35 @@ class CEquipo {
 
             }
 
-
         }
 
     }
 
 
+    /**
+     * @return array
+     */
+    private function borraJugadorsLibre()
+    {
 
+    //$liga = 1;
+        foreach ($this->array_fields['jugadores_equipo'] as $key ){
+
+
+            foreach ($key as $key2 => $value){
+
+
+                $consulta = $this->mysqli->query("DELETE FROM `jugador_libre` WHERE id_jugador=".$value."&& id_liga=".$this->array_fields['id_liga']);
+                                                                                                                            /*Añadido*/
+
+            }
+
+
+
+        }
+
+
+    }
 
 
 }
