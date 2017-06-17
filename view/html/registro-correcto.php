@@ -10,7 +10,7 @@
             <link rel="stylesheet" href="../css/fontello.css">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
             <script src="../js/jquery-3.1.1.min.js"></script>
-            <script src="../js/registro/codigoActivacion.js"></script>
+            <script src="../js/codigoActivacion.js"></script>
         <?php
 
         if(isset($_GET["error"])) {

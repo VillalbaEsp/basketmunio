@@ -105,10 +105,10 @@ class CRestRegistro{
 
 
         $mensaje = "¡Te damos la bienvenida a BASKETMUNIO!
-	Esta a solo un paso de poder jugar en la plataforma, para ello deberas activar tu cuenta introduciendo el código en el siguiente enlace:
+	Esta a solo un paso de poder jugar en la plataforma, para ello deberas activar tu cuenta introduciendo el código en el siguiente enlace: ".$this->datos['codigo']."
 
-	 Introduce el siguiente código en el enlace: "  . $this->codigo.
-        "http://www.basketmunio.esy.es/view/html/registro-correcto.php";
+	 Introduce el código en el enlace:
+        http://www.basketmunio.esy.es/view/html/registro-correcto.php";
 
         $asunto = "Activación de tu cuenta en Basketmunio";
 

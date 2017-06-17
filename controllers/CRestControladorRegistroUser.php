@@ -4,15 +4,21 @@
 require_once("RegistroController.php");
 
 $controladorUsuario = new CRestRegistro();
-
-if($_POST['ejecuta'] == "activaUser"){
-    if($controladorUsuario->activaUser()) {
-        //echo 1;
-        echo json_encode(array('success'=>'true'));
-    }else {
-        echo 0;
+die("SUUUU1");
+if(isset($_POST['ejecuta'])) {
+    die("SUUUU2");
+    if ($_POST['ejecuta'] == "activaUser") {
+        die("SUUUU3");
+        if ($controladorUsuario->activaUser()) {
+            die("correcto");//echo 1;
+            echo 1;
+        } else {
+            die("incorrecto");
+            echo 0;
+        }
     }
 }
+
 if(!$controladorUsuario->compruebaUsuario() == true) {
     header("Location: /basketmunio/view/html/registro.php?error");
 }else {
