@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="../css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/plantilla/plantilla.js"></script>
+
+    <?php
+    session_start();
+    if(!isset($_SESSION['id_usuario']))
+        header("Location: /basketmunio/view/html/login.php");
+
+    ?>
+
 
 </head>
 
-
-    <section id="contenedor_loguin">
-
-        <!--formulario del logueo con una imagen de fondo varios enlaces y demás cosas-->
+<body>
 
         <nav id="menu_cabecera">
 
@@ -66,28 +72,24 @@
             </div>
 
         </nav>
+            <div id="select_equipo">
 
+                <select>
+
+                </select>
+
+            </div>
         <div id="caja_plantilla">
 
             <div id="caja_jugadores">
                 <div class="titular"><h1>PLANTILLA</h1></div>
 
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
-                    <li>Jugador</li>
             </div>
 
             <div id="caja_cancha">
                 <div id="caja_imagen">
-                    <img src="../img/">
-                    <span id="jugador1">Jugador1</span><span id="jugador2">Jugador2</span><span id="jugador3">Jugador3</span><span id="jugador4">Jugador4</span><span id="jugador5">Jugador5</span>
+                    <img src="../img/canchayjugadores.png">
+                    <span id="jugador1"></span><span id="jugador2"></span><span id="jugador3"></span><span id="jugador4"></span><span id="jugador5"></span>
                 </div>
                 <div id="caja_estadistica">
                         <li>Jugador con mayor puntuación:</li>
