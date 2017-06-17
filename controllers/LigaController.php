@@ -76,4 +76,12 @@ class CRestLiga{
         return $calendario;
     }
 
+    public function muestraMercado($idEquipo){
+        $liga= new CLiga();
+
+        $mercado = $liga->obtenMercado($idEquipo);
+
+        return $mercado;
+    }
+
 }

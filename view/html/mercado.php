@@ -12,6 +12,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="../js/mercado/mercado.js"></script>
 
+    <?php
+        session_start();
+        if(!isset($_SESSION['id_usuario']))
+            header("Location: /basketmunio/view/html/login.php");
+
+        ?>
+
 </head>
 
 
@@ -53,7 +60,7 @@
 
         <div id="menu_contenedor_img">
 
-            <img src="../img/Equipo4-naranja.png">
+            <img src="../img/logo.png">
 
         </div>
 
@@ -72,6 +79,13 @@
 
 
     <div id="caja_contenido">
+        <div id="select_equipo">
+
+            <select>
+                <option>Selecciona tu equipo</option>
+            </select>
+
+        </div>
 
         <div id="caja_jugadores">
             <div class="titular"><h1>PLANTILLA</h1></div>
@@ -84,17 +98,6 @@
             <div id="contenido_mercado">
 
                 <li class="fila" id="fila1"><input type="checkbox" class="añadir" id="añadir1"><input type="checkbox" class="eliminar" id="añadir1e"><label class="icon-plus-circle" for="añadir1"></label><label class="icon-minus-circle" for="añadir1e"></label>JUGADOR1</li>
-                <li class="fila">JUGADOR2</li>
-                <li class="fila">JUGADOR3</li>
-                <li class="fila">JUGADOR4</li>
-                <li class="fila">JUGADOR5</li>
-                <li class="fila">JUGADOR6</li>
-                <li class="fila">JUGADOR7</li>
-                <li class="fila">JUGADOR8</li>
-                <li class="fila">JUGADOR9</li>
-                <li class="fila">JUGADOR10</li>
-                <li class="fila">JUGADOR11</li>
-                <li class="fila">JUGADOR12</li>
 
             </div>
 

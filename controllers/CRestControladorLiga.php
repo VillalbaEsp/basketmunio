@@ -26,5 +26,15 @@ if(isset($_POST['ejecutar'])) {
         }
 
     }
+
+    if ($_POST['ejecutar'] == "mercado") {
+        if($mercado = $controladorLiga->muestraMercado($_POST['idEquipo'])) {
+            echo json_encode($mercado);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }
 
