@@ -1,22 +1,72 @@
 <?php
 
-require_once("CEquipo.php");
-
-//CONTROLADOR
-$nombre_equipo = $_POST['nombre_equipo'];
-$escudo = $_POST['escudo'];
-
-$datos = array(
-
-    'id_usuario'        => 1,
-    'nombre_equipo'     => $nombre_equipo,
-    'escudo'            => $escudo,
-    'pts_equipo'        => 98,
-
-);
+require_once("../Model/CEquipo.php");
+require_once("../Model/CUser.php");
+require_once("../Model/CLiga.php");
 
 
-$equipo = new CEquipo();
+
+class CRestEquipo{
 
 
-$equipo->setEquipo($datos);
+    private $nombre;
+
+    private $escudo;
+
+    private $puntosEquipo;
+
+    private $datos;
+
+    private $nombreLiga;
+
+
+    public function __construct()
+    {
+        if(isset($_POST['nombre_liga']))
+            $this->nombre= $_POST['nombre_equipo'];
+
+        if(isset($_POST['nombre_liga']))
+            $this->escudo= $_POST['escudo'];
+
+        if(isset($_POST['nombre_liga']))
+            $this->nombreLiga = $_POST['nombre_liga'];
+
+        $this->datos = array(
+
+            'nombre_equipo' => $this->nombre,
+            'escudo_equipo' => $this->escudo,
+            'puntos_equipo' => 0, //Hay que sacarlos de las medias de los jugadores
+            'id_usuario'    => '',
+            'id_liga'       => ''
+
+        );
+
+    }
+
+
+    public function addEquipo(){
+        session_start();
+
+        $equipo = new CEquipo();
+
+       /*Añadido*/ $liga = new CLiga();
+
+        //$usuario = new CUser();
+
+        $this->datos['id_usuario']=$_SESSION['id_usuario'];
+
+        /*var_dump($this->datos);
+        die();*/
+
+        $this->datos['id_liga'] = $liga->getIdNombre($this->nombreLiga);
+        //$this->datos['id_liga']=$liga->
+
+        var_dump("datos");
+
+
+        $equipo->setEquipo($this->datos);
+
+    }
+
+
+}
