@@ -213,6 +213,22 @@ class CLiga{
 
     }
 
+    public  function obtenCalendario($mes){
+        $calendario = $this->extraeCalendario($mes);
+        return $calendario;
+    }
 
+    private function extraeCalendario($mes){
+
+        $res = $this->mysqli->query("SELECT * FROM partidos_reales WHERE MONTH(fecha_hora_partido) =".$mes."");
+
+        $calendario = array();
+
+        while($row = $res->fetch_assoc()){
+            array_push($calendario, $row);
+        }
+
+        return $calendario;
+    }
 
 }

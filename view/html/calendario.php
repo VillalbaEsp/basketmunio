@@ -3,13 +3,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Basketmunio</title>
-    <link rel="stylesheet" href="../css/estilo_busca_liga_1366px.css">
+    <title>Basketmunio_login</title>
+    <link rel="stylesheet" href="../css/estilos_calendario_1366px.css">
     <link rel="stylesheet" href="../css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/Ligas/ligas.js"></script>
+    <script src="../js/calendario/cargaCalendario.js"></script>
 
+    <?php
+                session_start();
+                if(!isset($_SESSION['id_usuario']))
+                    header("Location: /basketmunio/view/html/login.php");
+
+    ?>
 
 </head>
 
@@ -69,34 +75,45 @@
 
     </nav>
 
-    <div id="contenedor_form">
-        <h1>Busca una liga o Creala</h1>
-        <form id="formulario_search" method="post">
+    <form id="eleccion_mes">
 
-            <input type="text" name="search" id="search" placeholder="Nombre de la liga">
-            <input type="button" name="envio_search" id="envio_search" value="Buscar">
+        Mes:
+        <select id="select_mes">
 
-        </form><!--action="../controllRegistroLigaController.php.php"-->
-            <form id="formulario_creacion" method="post">
+            <option selected>Selecciona el mes</option>
+            <optgroup label="2016">
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </optgroup>
+            <optgroup label="2017">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+            </optgroup>
 
-                <!--<label for="nombre_liga">Nombre Equipo:</label>-->
-                <input type="text" name="nombre_liga" id="nombre_liga" placeholder="Nombre Liga"><br>
+        </select>
 
-                <select name="tipo_liga" id="tipo_liga">
-                    <option value="pu">Pública</option>
-                    <option value="pv">Privada</option>
-                </select><br>
+    </form>
 
-                <!-- <label for="password">Contraseña:</label><br>-->
-                <input type="text" name="password" id="password" placeholder="Contraseña">
 
-                <input type="button" name="envio_liga" id="registro_liga" value="Crear">
+    <div id="contenedor_tabla">
 
-               <!-- <input type="text" name="input_crear" id="input_crear" placeholder="Nombre de la liga">
-                <input type="submit" name="crear" id="crear" value="Crear">-->
+        <table id='ligas'>
+            <thead>
+            <tr><th>Fecha</th><th>Equipo Local</th><th>Resultado</th><th>Equipo Visitante</th></tr>
+            </thead>
+            <tbody>
 
-            </form>
+            </tbody>
+        </table>
+
+
+
     </div>
+
+
 
 
 

@@ -68,29 +68,12 @@ class CRestLiga{
 
     }
 
+    public function muestraCalenario($mes){
+        $liga= new CLiga();
+
+        $calendario = $liga->obtenCalendario($mes);
+
+        return $calendario;
+    }
 
 }
-
-/*
-$nombre = $_POST['nombre_liga'];
-
-$tipo = $_POST['tipo_liga'];
-
-$password = $_POST['password'];
-
-$ligaNom = "Omega";
-
-$datos=array(
-
-    'nombre_liga'   => $nombre,
-    'tipo_liga'   => $tipo,
-    'password'   => $password
-);
-
-$liga = new Cliga;
-
-$liga->setDatosLiga($datos);
-
-$count=$liga->equiposLiga($ligaNom);
-
-*/

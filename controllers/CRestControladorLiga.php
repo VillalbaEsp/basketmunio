@@ -1,6 +1,6 @@
 <?php
 
-require_once ("RegistroLiga.php");
+require_once("LigaController.php");
 
 $controladorLiga = new CRestLiga();
 
@@ -10,13 +10,20 @@ if(isset($_POST['ejecutar'])) {
 
     }
 
-    $prueba = array("hola", "adios");
-
-
     if ($_POST['ejecutar'] == "muestraLiga") {
 
         $tablaLiga = $controladorLiga->muestraLigas();
         echo json_encode($tablaLiga);
+
+    }
+
+    if ($_POST['ejecutar'] == "calendario") {
+        if($calendario = $controladorLiga->muestraCalenario($_POST['mes'])) {
+            echo json_encode($calendario);
+            return true;
+        }else {
+            return false;
+        }
 
     }
 }
