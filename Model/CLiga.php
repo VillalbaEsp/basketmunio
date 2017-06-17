@@ -53,6 +53,7 @@ class CLiga{
 
 
         $this->addLiga();
+        $this->jugadoresLiga();
 
 
     }
@@ -86,6 +87,40 @@ class CLiga{
         return $resultado['COUNT(*)'];
 
     }
+
+
+    private function jugadoresLiga(){
+        $idLiga=$this->idParaEquipo($this->array_fields['nombre_liga']);
+
+        $resultado= array();
+
+        $consulta=$this->mysqli->query("SELECT id_jugador FROM jugadores");
+
+        while ($row = $consulta->fetch_assoc()) {
+            array_push($resultado,$row);
+        }
+
+        foreach($resultado as $key){
+            foreach ($key as $key2 => $value){
+
+                $consulta=$this->mysqli->query("INSERT INTO jugador_libre (id_jugador,id_liga) VALUES (".$value.",".$idLiga.")");
+            }
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
     public function getIdNombre($nombreLiga){
 
