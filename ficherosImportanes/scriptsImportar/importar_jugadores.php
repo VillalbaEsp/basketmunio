@@ -12,7 +12,7 @@ if ($myBBDD) {
 		if (($fichero = fopen("../excelsDatos/jugadores_posicion_equipo.csv", "r")) !== FALSE) { 
 
 		mysqli_query($myBBDD, "DELETE FROM jugadores");
-		mysqli_query($myBBDD, "ALTER TABLE jugadores AUTO_INCREMENT=1"); // Reinicia AUTO_INCREMENT
+		mysqli_query($myBBDD, "ALTER TABLE jugadores AUTO_INCREMENT=0"); // Reinicia AUTO_INCREMENT
 
 		while (!empty(($datos = fgetcsv($fichero, 0, ",")))) {
 	    	mysqli_query($myBBDD, "INSERT INTO `jugadores` (`nombre_jugador`, `posicion_jugador`, `equipo_real_jugador`, `precio_jugador`) VALUES ('$datos[0]','$datos[1]','$datos[2]', '$datos[3]');");

@@ -12,8 +12,8 @@
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             <?php
                 session_start();
-            if(!isset($_SESSION['id_usuario']))
-                header("Location: /basketmunio/view/html/login.php");
+                if(!isset($_SESSION['id_usuario']))
+                    header("Location: /basketmunio/view/html/login.php");
 
             ?>
         </head>
@@ -68,12 +68,24 @@
 
                         <li><a href="#">Calendario</a></li>
                         <li><a href="#">Ayuda</a></li>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
 
                     </ul>
 
                     </div>
 
                 </nav>
+
+                <form id="formulario" action="../../controllers/CRestControladorEquipo.php" method="post">
+                    <label for="input_nombre_equipo">Nombre Equipo:</label>
+                    <input type="text" name="nombre_equipo" id="input_nombre_equipo" placeholder="Nombre">
+                    <label for="input_escudo">Escudo:</label>
+                    <input type="text" name="escudo" id="input_escudo" placeholder="escudo">
+                    <label for="input_escudo">Nombre de la Liga:</label>
+                    <!-- Añadido--><input type="text" name="nombre_liga" id="input_nombre_liga" placeholder="Nombre de la Liga">
+                    <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
+                </form>
+
                 <div id="contenedor_slider">
                     <div class = "titular"><h1>DESTACADOS</h1></div>
                     <div id="slider">

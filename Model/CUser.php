@@ -87,6 +87,11 @@ class CUser{
 
                     break;
 
+                case 'codigo':
+                    $this->array_fields['codigo_activacion'] = $value;
+
+                    break;
+
             }
 
         }
@@ -126,25 +131,44 @@ class CUser{
     }
 
 
-    private function activacionUser($codigo){
+    private function codigoActivacionUser(){
 
-
-        if($codigo != null ){
+        if($this->array_fields['codigo_activacion'] ){
 
             $stmt = $this->mysqli->prepare("UPDATE usuarios SET codigo_activacion_usuario=? WHERE id_usuario=?");
 
-            $stmt->bind_param("si",$codigo,$this->array_fields['id']);
+            $stmt->bind_param("si",$this->array_fields['codigo_activacion'],$this->array_fields['id']);
 
-            $stmt->execute();
+            if($stmt->execute())
+                return true;
+            else
+                return false;
 
-            $this->array_fields['activado'] = 1;
+            }
+            return false;
+    }
 
-            $consulta ="";
+    private function activaUsuario($codigo){
 
-            $consulta = $this->mysqli->query("UPDATE usuarios SET activado_usuario=". $this->array_fields['activado']." WHERE id_usuario=". $this->array_fields['id']);
+        $stmt = $this->mysqli->prepare("SELECT id_usuario FROM usuarios WHERE codigo_activacion_usuario=?");
 
+        $stmt->bind_param("s", $codigo);
 
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $res = $res->fetch_assoc();
+
+        $id= $res['id_usuario'];
+
+        if(isset($id)) {
+            if ($this->mysqli->query("UPDATE usuarios SET activado_usuario=1 WHERE id_usuario=" . $id . " AND codigo_activacion_usuario='" . $codigo . "'"))
+            return true;
+        }else{
+            return false;
         }
+
     }
 
     private function obtenerID(){
@@ -218,6 +242,20 @@ class CUser{
     }
 
 
+    public function setCodigoActivacion($codigo){
+        if($this->codigoActivacionUser($codigo))
+            return true;
+        else
+            return false;
+    }
+
+    public function setActivaUsuario($codigo){
+        if($this->activaUsuario($codigo))
+            return true;
+        else
+            return false;
+
+    }
 
    public function get_id()
     {

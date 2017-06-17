@@ -216,5 +216,43 @@ class CEquipo {
 
     }
 
+    public function muestraExtraccionEquiposUsuario($idUsuario){
+        $res = $this->extraeEquiposUsuario($idUsuario);
+        return $res;
+    }
 
+    private function extraeEquiposUsuario($idUsuario){
+
+        $res = $this->mysqli->query("SELECT id_equipo, nombre_equipo FROM equipos WHERE id_usuario=".$idUsuario."");
+
+        $info = array ();
+
+        while($row = $res->fetch_assoc()){
+            array_push($info, $row);
+        }
+
+        return ($info);
+
+    }
+
+    public function obtenInfoMiEquipo($idUsuario, $idEquipo){
+
+        $res = $this->extraeInfoMiEquipo($idUsuario, $idEquipo);
+
+        return $res;
+
+    }
+
+    private function extraeInfoMiEquipo($idUsuario, $idEquipo){
+
+        $res = $this->mysqli->query("SELECT j.nombre_jugador, j.posicion_jugador FROM jugadores_equipos je, jugadores j WHERE je.id_usuario=".$idUsuario." AND je.id_equipo=".$idEquipo." AND j.id_jugador=je.id_jugador");
+
+        $info = array ();
+
+        while($row = $res->fetch_assoc()){
+            array_push($info, $row);
+        }
+
+        return ($info);
+    }
 }

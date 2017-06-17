@@ -1,26 +1,36 @@
 $( document ).ready(function() {
 
-    var nombreLiga= $("#nombre_liga").val();
-    var tipoLiga= $("#tipo_liga").val();
-    var passwordLiga= $("#password").val();
+    $.ajax({
+        type: 'POST',
+        url: "../../controllers/CRestControladorEquipo.php",
+        data: {metodo: "misEquipos"},
+        dataType: "json",
+        success: function (data) {
 
+            for(var i=0; i<data.length; i++) {
+                $('#select_equipo select').append('<option value="' + data[i]['id_equipo'] + '">'+ data[i]['nombre_equipo'] + '</option>');
+            }
+        }
+    });
 
+$( "#select_equipo select" ).change(function () {
+
+    var idEquipo = $(this).val();
 
     $.ajax({
         type: 'POST',
-        url: "../controllers/CRestControladorAddLiga.php",
-        data: {nombre_liga : nombreLiga,tipo_liga : tipoLiga, password : passwordLiga ,ejecutar : "creaLiga"},
+        url: "../../controllers/CRestControladorEquipo.php",
+        data: {metodo: "muestraInfo", idEquipo: idEquipo},
         dataType: "json",
-        // Mostramos un mensaje con la respuesta de PHP
-        /*success: function(data) {
-         $('#result').html(data);
-         }*/
-    });
+        success: function (data) {
 
-    if($.ajax){
-        $("#nombre_liga").val("");
-        $("#formulario_creacion").append("<div id='caja_mensaje'><p>Liga Creada Correctamente</p></div>");
-    }
+            for(var i=0; i<data.length; i++) {
+                $('.titular').append('<li style="te">Nombre: '+ data[i]['nombre_jugador'] + '     <br>Posición: ' + data[i]['posicion_jugador'] +'</li>');
+                if(i < 6)
+                $("#caja_imagen").append("<span id='jugador" + i + "'>" + data[i]['nombre_jugador'] + "</span>");
+            }
+        }
+    })
 
-
+});
 });

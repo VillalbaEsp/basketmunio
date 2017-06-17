@@ -5,19 +5,27 @@
         <head>
             
             <meta charset="utf-8">
-            <title>Basketmunio_registro</title>
+            <title>Basketmunio</title>
             <link rel="stylesheet" href="../css/estilos_registro.css">
             <link rel="stylesheet" href="../css/fontello.css">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
             <script src="../js/jquery-3.1.1.min.js"></script>
-            <script src="../js/validaFormRegistro.js"></script>
+            <script src="../js/codigoActivacion.js"></script>
         <?php
 
-        if(!isset($_GET["error"])) {
-            $display = "display: none;";
+        if(isset($_GET["error"])) {
+            $displayError = "display: block;";
+            $form = "display:block";
         }else {
-            $display = "display: block;";
-            $msg = "error";
+            $displayError = "display: none;";
+        }
+
+        if(isset($_GET["success"])) {
+            $displaySucces = "display: block;";
+            $form = "display:none";
+        }else {
+            $displaySucces = "display: none;";
+            $form = "display:block";
         }
 
         ?>
@@ -41,16 +49,17 @@
                 
                 <div id="contenedor_form_registro">
 
-                    <div id="msg_error" style="<?php echo $display ?>;">Apodo o correo electrónico ya registrado.</div>
+                    <div id="msg_error" style="<?php echo $displayError ?>;">Código incorrecto.</div>
+                    <div id="msg_success" style="<?php echo $displaySucces ?>;">Cuenta activada correctamente.</div>
+
+                <div id="form_registro" style="<?php echo $form?>">
                 
-                <div id="form_registro">
-                
-                   <form id="formulario" method="post" action="../../controllers/CRestControladorRegistroUser.php" >
+                   <form id="formulario">
 
                        <label for="input_registrado" id="label_registrado">Se ha registrado correctamente, en unos momentos le llegara un email de confirmación, por favor intoduce el código de activación para activar la cuenta: </label>
-                       <input type="text" name="cactivacion" id="input_registrado" required >
+                       <input type="text" name="codigo" id="input_codigo" required >
                     
-                       <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
+                       <input type="button" name="envio_codigo" id="button_registro" value="Enviar">
 
                    </form>
                 
