@@ -119,9 +119,6 @@ class CEquipo {
 
         }
 
-        var_dump($this->listaBorrados);
-
-
     }
 
 
@@ -134,10 +131,10 @@ class CEquipo {
 
         $idLiga= $liga->getId();*/
         $this->ListaBorrados();
-        $idLiga = 1;
+        //$idLiga = 1;
         $i = 0;
 
-        while($i<11) {
+        while($i<10) {
 
             $numero = mt_rand(1, 453);
             //HAY QUE PASARLE EL ID LIGA
@@ -145,7 +142,7 @@ class CEquipo {
             if(!in_array($numero , $this->listaBorrados)){
 
 
-                $consulta= $this->mysqli->query("SELECT * FROM jugador_libre WHERE id_liga=".$idLiga."&& id_jugador=".$numero."");
+                $consulta= $this->mysqli->query("SELECT * FROM jugador_libre WHERE id_liga=".$this->array_fields['id_liga']."&& id_jugador=".$numero."");
 
 
                 $jugador = $consulta->fetch_assoc();
@@ -309,4 +306,83 @@ class CEquipo {
 
         return ($info);
     }
+
+
+    public function muestraEquipoDestacado(){
+
+        $resultado = $this->cogeEquipoDestacado();
+
+        return $resultado;
+
+    }
+
+
+    private function cogeEquipoDestacado(){
+
+
+        $consulta = $this->mysqli->query("SELECT * FROM equipos");
+
+        $resultado = array();
+
+        while ($row = $consulta->fetch_assoc()) {
+
+            array_push($resultado,$row['nombre_equipo']);
+
+        }
+
+        return $resultado;
+
+
+    }
+
+    public function muestraEscudoDestacado(){
+
+        $resultado = $this->cogeEscudoEquipo();
+
+        return $resultado;
+
+    }
+
+    private function cogeEscudoEquipo(){
+
+
+        $consulta = $this->mysqli->query("SELECT * FROM equipos");
+
+        $resultado = array();
+
+        while ($row = $consulta->fetch_assoc()) {
+
+            array_push($resultado,$row['escudo_equipo']);
+
+        }
+
+        return $resultado;
+
+
+
+    }
+    public function muestraJugadoresDestacado(){
+
+        $resultado = $this->cogeJugadorPlantilla();
+
+        return $resultado;
+
+    }
+
+    public function cogeJugadorPlantilla(){
+        $consulta = $this->mysqli->query("SELECT nombre_jugador, posicion_jugador, equipo_real_jugador, precio_jugador FROM jugadores WHERE nombre_jugador = 'Lebron James' OR nombre_jugador = 'Stephen Curry' OR nombre_jugador = 'Kevin Durant'");
+
+        $resultado = array();
+
+        while ($row = $consulta->fetch_assoc()) {
+
+            array_push($resultado,$row);
+
+        }
+
+        return $resultado;
+    }
+
+
+
 }

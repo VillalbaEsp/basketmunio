@@ -184,30 +184,7 @@ class CLiga{
 
             }
         }
-
-
-
-
-        /*$aux=0;
-        foreach ($resultado as $key) {
-            foreach ($key as $key2 => $value2){
-                if($key2 == 'nombre_liga') {
-                    $equipos = $this->equiposLiga($value2);
-                    $resultado[$aux]['equipos'] = $equipos;
-                }
-
-        }
-            $aux++;
-        }*/
-
-
-
-       //$resultado = $consulta->fetch_assoc();
-
-
-
-
-
+        
         return $resultado;
 
 
@@ -257,7 +234,7 @@ class CLiga{
 
     private function extraeClasificacion($idLiga){
 
-        $res = $this->mysqli->query("SELECT id_liga FROM equipos WHERE id_equipo=".$idEquipo."");
+        $res = $this->mysqli->query("SELECT id_liga FROM equipos WHERE id_equipo=".$idLiga."");
         $res = $res->fetch_assoc();
 
         $idLiga = $res['id_liga'];

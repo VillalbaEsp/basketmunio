@@ -4,8 +4,8 @@ require_once("LigaController.php");
 
 $controladorLiga = new CRestLiga();
 
-if(isset($_POST['ejecutar'])) {
-    if ($_POST['ejecutar'] == "creaLiga") {
+if(isset($_POST['ejecutar'])){
+    if($_POST['ejecutar'] == "creaLiga"){
         $controladorLiga->addLiga();
 
     }
@@ -58,4 +58,5 @@ if(isset($_POST['ejecutar'])) {
 
     }
 }
+
 
