@@ -11,13 +11,14 @@
     <script src="../js/equipos/equipos.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+    <?php
+    session_start();
+    if(!isset($SESION['id_usuario'])){
+        header("Location: /basketmunio/view/html/login.php");
+    }
+    ?>
 </head>
-<?php
-session_start();
-/*if(!isset($SESION[id_usuario])){
-    header("Location: /basketmunio/view/html/login.php");
-}*/
-?>
+
 <body>
 
 <section id="contenedor_loguin">

@@ -112,6 +112,17 @@ ul li .secundario {
      font-size: 18px;
  }
 
+#contenedor_form_registro #msg_valida{
+      width:70%;
+      height: 50px;
+      margin: 0% 14%;
+      padding-top: 24px;
+      background-color:rgba(255,0,0, 0.4) ;
+      color: white;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 18px;
+}
 #contenedor_form_registro #msg_success{
     width:70%;
     height: 50px;

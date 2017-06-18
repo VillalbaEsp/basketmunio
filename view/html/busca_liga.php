@@ -10,7 +10,12 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/Ligas/ligas.js"></script>
 
+    <?php
+    session_start();
+    if(!isset($_SESSION['id_usuario']))
+        header("Location: /basketmunio/view/html/login.php");
 
+    ?>
 </head>
 
 

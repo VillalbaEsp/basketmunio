@@ -68,7 +68,7 @@
 
                     </form>
 
-                    <div id="msg_error" style="<?php echo $display ?>;">Credencidales incorrectas, vuelva a intentarlo.</div>
+                    <div id="msg_error" style="<?php echo $display ?>;">Credencidales incorrectas o cuenta no activada.</div>
                     
                 </div>
             

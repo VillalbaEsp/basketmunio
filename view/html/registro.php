@@ -47,12 +47,13 @@
                 <div id="contenedor_form_registro">
 
                     <div id="msg_error" style="<?php echo $display ?>;">Apodo o correo electrónico ya registrado.</div>
+                    <div id="msg_valida" style="display: none;">Algunos de los datos del registro son incorrectos</div>
                 
                 <div id="form_registro">
                 
-                   <form id="formulario" method="post" action="../../controllers/CRestControladorRegistroUser.php" >
+                   <form id="formulario" method="post"> <!-- Action en el jQuery-->
 
-                       <label for="input_apodo">Apodo:</label>
+                       <label for="input_apodo"> Apodo:</label>
                        <input type="text" name="apodo" class="<?php echo $msg ?>" id="input_apodo" placeholder="Apodo" required >
                        
                        <label for="input_nombre">Nombre:</label>
