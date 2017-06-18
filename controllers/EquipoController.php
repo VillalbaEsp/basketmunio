@@ -74,31 +74,29 @@ class CRestEquipo{
     }
 
 
+    public function mostrarEquipoUsuario(){
 
+        session_start();
+        $equipo = new CEquipo();
+        $idUsuario = $_SESSION['id_usuario'];
 
+        $equiposUsuarios = $equipo->muestraExtraccionEquiposUsuario($idUsuario);
 
+        return $equiposUsuarios;
+    }
 
+    public function infoMiEquipo($idEquipo){
+        session_start();
 
+        $equipo = new CEquipo();
 
+        $idUsuario = $_SESSION['id_usuario'];
 
+        $infoEquipo = $equipo->obtenInfoMiEquipo($idUsuario, $idEquipo);
 
+        return $infoEquipo;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
     public function equiposDestacados(){
 
