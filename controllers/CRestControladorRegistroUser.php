@@ -4,11 +4,9 @@
 require_once("RegistroController.php");
 
 $controladorUsuario = new CRestRegistro();
-die("SUUUU1");
+
 if(isset($_POST['ejecuta'])) {
-    die("SUUUU2");
     if ($_POST['ejecuta'] == "activaUser") {
-        die("SUUUU3");
         if ($controladorUsuario->activaUser()) {
             die("correcto");//echo 1;
             echo 1;
