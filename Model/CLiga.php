@@ -234,16 +234,15 @@ class CLiga{
 
     private function extraeClasificacion($idLiga){
 
-        $res = $this->mysqli->query("SELECT id_liga FROM equipos WHERE id_equipo=".$idLiga."");
-        $res = $res->fetch_assoc();
+        $res = $this->mysqli->query("SELECT e.nombre_equipo, u.apodo_usuario, e.pts_equipo FROM equipos e, usuarios u WHERE e.id_liga=".$idLiga." AND e.id_usuario=u.id_usuario ORDER BY e.pts_equipo DESC");
 
-        $idLiga = $res['id_liga'];
+        $clasificacion = array ();
 
-        $res = $this->mysqli->query("SELECT j.* FROM jugador_libre jl, jugadores j WHERE jl.id_liga=".$idLiga." AND jl.id_jugador=j.id_jugador");
+        while($row = $res->fetch_assoc()){
+            array_push($clasificacion,$row);
+        }
 
-        $calendario = $res->fetch_all();
-
-        return $calendario;
+        return $clasificacion;
     }
 
     public function obtenEquipoLiga($idUsuario){

@@ -74,17 +74,11 @@
                 
             </nav>
 
-            <div id="contenedor_tabla_misligas">
-                <table id="tabla_misligas" class="tabla-misligas tabla-misligas-zebra tabla-misligas-horizontal">
-                    <thead>
-                    <tr>
-                        <th>Liga</th>
-                        <th>Equipo</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+            <div id="contenedor_select_misligas">
+                <select id="select_misliga">
+                    <option selected>Seleccione su equipo</option>
+                    <!-- CONTENIDO POR jQuery -->
+                </select>
             </div>
             <div id="contenedor_clasificacion_miliga">
                 <table class="tabla-clasificacionligas tabla-clasificacionligas-zebra tabla-clasificacionligas-horizontal">
@@ -97,36 +91,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Equipo1</td>
-                        <td>Usuario1</td>
-                        <td>88</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Equipo2</td>
-                        <td>Usuario2</td>
-                        <td>86</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Equipo3</td>
-                        <td>Usuario3</td>
-                        <td>80</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Equipo4</td>
-                        <td>Usuario4</td>
-                        <td>78</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Equipo5</td>
-                        <td>Usuario5</td>
-                        <td>74</td>
-                    </tr>
+                    <!-- CONTENIDO POR jQuery -->
                     </tbody>
                 </table>
             </div>

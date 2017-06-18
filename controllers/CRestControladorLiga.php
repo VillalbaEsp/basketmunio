@@ -49,7 +49,7 @@ if(isset($_POST['ejecutar'])){
     }
 
     if ($_POST['ejecutar'] == "clasificacion") {
-        if($clasificacion = $controladorLiga->muestraClasificacion($_SESSION['id_liga'])) {
+        if($clasificacion = $controladorLiga->muestraClasificacion($_POST['idLiga'])) {
             echo json_encode($clasificacion);
             return true;
         }else {

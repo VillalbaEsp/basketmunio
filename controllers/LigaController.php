@@ -84,10 +84,10 @@ class CRestLiga{
         return $mercado;
     }
 
-    public function muestraClasificacion($idUsuario){
+    public function muestraClasificacion($idLiga){
         $liga = new CLiga();
 
-        $clasificacion = $liga->obtenClasificacion($idUsuario);
+        $clasificacion = $liga->obtenClasificacion($idLiga);
 
         return $clasificacion;
     }
