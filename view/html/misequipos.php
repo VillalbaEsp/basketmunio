@@ -66,6 +66,7 @@
 
                     <li><a href="#">Calendario</a></li>
                     <li><a href="#">Ayuda</a></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
 
                 </ul>
 
@@ -75,7 +76,7 @@
             <div id="select_equipo">
 
                 <select>
-
+                    <option>Selecciona tu equipo</option>
                 </select>
 
             </div>
@@ -92,12 +93,7 @@
                     <span id="jugador1"></span><span id="jugador2"></span><span id="jugador3"></span><span id="jugador4"></span><span id="jugador5"></span>
                 </div>
                 <div id="caja_estadistica">
-                        <li>Jugador con mayor puntuación:</li>
-                        <li>Jugador con más asistencias:</li>
-                        <li>Jugador que coge más rebotes defensivos:</li>
-                        <li>Jugador que coge más rebotes ofensivos:</li>
-                        <li>Jugador con mas tapones:</li>
-                        <li>Jugador con mas robos:</li>
+
                 </div>
 
             </div>

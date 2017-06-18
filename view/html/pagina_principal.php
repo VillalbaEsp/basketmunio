@@ -83,7 +83,7 @@
                     <input type="text" name="escudo" id="input_escudo" placeholder="escudo">
                     <label for="input_escudo">Nombre de la Liga:</label>
                     <!-- Añadido--><input type="text" name="nombre_liga" id="input_nombre_liga" placeholder="Nombre de la Liga">
-                    <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
+                    <input type="submit" name="envio_registro" id="button_registro" value="Crear">
                 </form>
 
                 <div id="contenedor_slider">

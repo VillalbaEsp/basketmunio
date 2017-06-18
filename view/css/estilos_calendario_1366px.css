@@ -110,6 +110,8 @@ ul li .secundario {
     height: 600px;
     margin: auto;
     margin-top: 40px;
+    overflow: auto;
+    overflow-x: hidden;
 
 }
 
@@ -125,7 +127,7 @@ ul li .secundario {
     text-align: center;
 }
 
-#eleccion_semana{
+#eleccion_mes{
     margin: auto;
     width: 65%;
     margin-top: 40px;
@@ -133,33 +135,13 @@ ul li .secundario {
     color:#004F7C;
 }
 
-#select_semana{
-    width:30%;
+#select_mes{
+    width:70%;
     height: 40px;
     margin-right: 2%;
     margin-left: 2%;
     margin-top: 5%;
     color:#004F7C;
-}
-
-#select_anio{
-    width:30%;
-    height: 40px;
-    margin-left: 2%;
-    margin-top: 5%;
-    color:#004F7C;
-
-}
-
-#search_semana{
-    width:10%;
-    height: 50px;
-    margin: 2% 36%;
-    background-color:#22E363;
-    color: white;
-    border: 2px solid #22E363;
-    border-radius: 6px;
-
 }
 
 /*----------------------------------------------------------------------------------------------------------------*/

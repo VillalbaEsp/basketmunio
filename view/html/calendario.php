@@ -4,13 +4,18 @@
 <head>
     <meta charset="utf-8">
     <title>Basketmunio_login</title>
-    <link rel="stylesheet" href="../css/estilo_mercado_1366px.css">
+    <link rel="stylesheet" href="../css/estilos_calendario_1366px.css">
     <link rel="stylesheet" href="../css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="../js/mercado/mercado.js"></script>
+    <script src="../js/calendario/cargaCalendario.js"></script>
+
+    <?php
+                session_start();
+                if(!isset($_SESSION['id_usuario']))
+                    header("Location: /basketmunio/view/html/login.php");
+
+    ?>
 
 </head>
 
@@ -53,7 +58,7 @@
 
         <div id="menu_contenedor_img">
 
-            <img src="../img/Equipo4-naranja.png">
+            <img src="../img/logo.png">
 
         </div>
 
@@ -70,38 +75,47 @@
 
     </nav>
 
+    <form id="eleccion_mes">
 
-    <div id="caja_contenido">
+        Mes:
+        <select id="select_mes">
 
-        <div id="caja_jugadores">
-            <div class="titular"><h1>PLANTILLA</h1></div>
+            <option selected>Selecciona el mes</option>
+            <optgroup label="2016">
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </optgroup>
+            <optgroup label="2017">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+            </optgroup>
+
+        </select>
+
+    </form>
 
 
-        </div>
+    <div id="contenedor_tabla">
 
-        <div id="caja_mercado">
-            <div class="titular"><h1>MERCADO</h1></div>
-            <div id="contenido_mercado">
+        <table id='ligas'>
+            <thead>
+            <tr><th>Fecha</th><th>Equipo Local</th><th>Resultado</th><th>Equipo Visitante</th></tr>
+            </thead>
+            <tbody>
 
-                <li class="fila" id="fila1"><input type="checkbox" class="añadir" id="añadir1"><input type="checkbox" class="eliminar" id="añadir1e"><label class="icon-plus-circle" for="añadir1"></label><label class="icon-minus-circle" for="añadir1e"></label>JUGADOR1</li>
-                <li class="fila">JUGADOR2</li>
-                <li class="fila">JUGADOR3</li>
-                <li class="fila">JUGADOR4</li>
-                <li class="fila">JUGADOR5</li>
-                <li class="fila">JUGADOR6</li>
-                <li class="fila">JUGADOR7</li>
-                <li class="fila">JUGADOR8</li>
-                <li class="fila">JUGADOR9</li>
-                <li class="fila">JUGADOR10</li>
-                <li class="fila">JUGADOR11</li>
-                <li class="fila">JUGADOR12</li>
+            </tbody>
+        </table>
 
-            </div>
-
-        </div>
 
 
     </div>
+
+
+
+
 
 </section>
 <footer id="contenedor_footer">

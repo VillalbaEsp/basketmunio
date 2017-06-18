@@ -68,29 +68,36 @@ class CRestLiga{
 
     }
 
+    public function muestraCalenario($mes){
+        $liga= new CLiga();
+
+        $calendario = $liga->obtenCalendario($mes);
+
+        return $calendario;
+    }
+
+    public function muestraMercado($idEquipo){
+        $liga= new CLiga();
+
+        $mercado = $liga->obtenMercado($idEquipo);
+
+        return $mercado;
+    }
+
+    public function muestraClasificacion($idUsuario){
+        $liga = new CLiga();
+
+        $clasificacion = $liga->obtenClasificacion($idUsuario);
+
+        return $clasificacion;
+    }
+
+    public function muestraEquipoLiga($idLiga){
+        $liga = new CLiga();
+
+        $equipoliga = $liga->obtenEquipoLiga($idLiga);
+
+        return $equipoliga;
+    }
 
 }
-
-/*
-$nombre = $_POST['nombre_liga'];
-
-$tipo = $_POST['tipo_liga'];
-
-$password = $_POST['password'];
-
-$ligaNom = "Omega";
-
-$datos=array(
-
-    'nombre_liga'   => $nombre,
-    'tipo_liga'   => $tipo,
-    'password'   => $password
-);
-
-$liga = new Cliga;
-
-$liga->setDatosLiga($datos);
-
-$count=$liga->equiposLiga($ligaNom);
-
-*/

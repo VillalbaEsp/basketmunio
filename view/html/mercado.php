@@ -3,13 +3,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Basketmunio</title>
-    <link rel="stylesheet" href="../css/estilo_busca_liga_1366px.css">
+    <title>Basketmunio_login</title>
+    <link rel="stylesheet" href="../css/estilo_mercado_1366px.css">
     <link rel="stylesheet" href="../css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/Ligas/ligas.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../js/mercado/mercado.js"></script>
 
+    <?php
+        session_start();
+        if(!isset($_SESSION['id_usuario']))
+            header("Location: /basketmunio/view/html/login.php");
+
+        ?>
 
 </head>
 
@@ -69,36 +77,34 @@
 
     </nav>
 
-    <div id="contenedor_form">
-        <h1>Busca una liga o Creala</h1>
-        <form id="formulario_search" method="post">
 
-            <input type="text" name="search" id="search" placeholder="Nombre de la liga">
-            <input type="button" name="envio_search" id="envio_search" value="Buscar">
+    <div id="caja_contenido">
+        <div id="select_equipo">
 
-        </form><!--action="../controllRegistroLigaController.php.php"-->
-            <form id="formulario_creacion" method="post">
+            <select>
+                <option>Selecciona tu equipo</option>
+            </select>
 
-                <!--<label for="nombre_liga">Nombre Equipo:</label>-->
-                <input type="text" name="nombre_liga" id="nombre_liga" placeholder="Nombre Liga"><br>
+        </div>
 
-                <select name="tipo_liga" id="tipo_liga">
-                    <option value="pu">Pública</option>
-                    <option value="pv">Privada</option>
-                </select><br>
+        <div id="caja_jugadores">
+            <div class="titular"><h1>PLANTILLA</h1></div>
 
-                <!-- <label for="password">Contraseña:</label><br>-->
-                <input type="text" name="password" id="password" placeholder="Contraseña">
 
-                <input type="button" name="envio_liga" id="registro_liga" value="Crear">
+        </div>
 
-               <!-- <input type="text" name="input_crear" id="input_crear" placeholder="Nombre de la liga">
-                <input type="submit" name="crear" id="crear" value="Crear">-->
+        <div id="caja_mercado">
+            <div class="titular"><h1>MERCADO</h1></div>
+            <div id="contenido_mercado">
 
-            </form>
+                <li class="fila" id="fila1"><input type="checkbox" class="añadir" id="añadir1"><input type="checkbox" class="eliminar" id="añadir1e"><label class="icon-plus-circle" for="añadir1"></label><label class="icon-minus-circle" for="añadir1e"></label>JUGADOR1</li>
+
+            </div>
+
+        </div>
+
+
     </div>
-
-
 
 </section>
 <footer id="contenedor_footer">
