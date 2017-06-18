@@ -36,5 +36,26 @@ if(isset($_POST['ejecutar'])) {
         }
 
     }
+
+    if ($_POST['ejecutar'] == "equipoliga") {
+        session_start();
+        if($equipoliga = $controladorLiga->muestraEquipoLiga($_SESSION['id_usuario'])) {
+            echo json_encode($equipoliga);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    if ($_POST['ejecutar'] == "clasificacion") {
+        if($clasificacion = $controladorLiga->muestraClasificacion($_SESSION['id_liga'])) {
+            echo json_encode($clasificacion);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }
 

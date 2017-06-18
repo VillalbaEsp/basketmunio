@@ -250,4 +250,37 @@ class CLiga{
         return $calendario;
     }
 
+    public function obtenClasificacion($idLiga){
+        $clasificacion = $this->extraeClasificacion($idLiga);
+        return $clasificacion;
+    }
+
+    private function extraeClasificacion($idLiga){
+
+        $res = $this->mysqli->query("SELECT id_liga FROM equipos WHERE id_equipo=".$idEquipo."");
+        $res = $res->fetch_assoc();
+
+        $idLiga = $res['id_liga'];
+
+        $res = $this->mysqli->query("SELECT j.* FROM jugador_libre jl, jugadores j WHERE jl.id_liga=".$idLiga." AND jl.id_jugador=j.id_jugador");
+
+        $calendario = $res->fetch_all();
+
+        return $calendario;
+    }
+
+    public function obtenEquipoLiga($idUsuario){
+        $equipoliga = $this->extraeEquipoLiga($idUsuario);
+        return $equipoliga;
+    }
+
+    private function extraeEquipoLiga($idUsuario){
+
+        $res = $this->mysqli->query("SELECT e.id_equipo, e.nombre_equipo , l.id_liga, l.nombre_liga FROM equipos e, ligas l WHERE e.id_usuario=".$idUsuario." AND e.id_liga=l.id_liga");
+
+        $equipoliga = $res->fetch_all();
+
+        return $equipoliga;
+    }
+
 }

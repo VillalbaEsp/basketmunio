@@ -84,4 +84,20 @@ class CRestLiga{
         return $mercado;
     }
 
+    public function muestraClasificacion($idUsuario){
+        $liga = new CLiga();
+
+        $clasificacion = $liga->obtenClasificacion($idUsuario);
+
+        return $clasificacion;
+    }
+
+    public function muestraEquipoLiga($idLiga){
+        $liga = new CLiga();
+
+        $equipoliga = $liga->obtenEquipoLiga($idLiga);
+
+        return $equipoliga;
+    }
+
 }
