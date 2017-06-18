@@ -10,14 +10,14 @@
             <script src="../js/jquery-3.1.1.min.js"></script>
             <script src="../js/pagina_principal/pagina__principal.js"></script>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </head>
             <?php
                 session_start();
                 if(!isset($_SESSION['id_usuario']))
                     header("Location: /basketmunio/view/html/login.php");
 
             ?>
-        </head>
-
         <body>
 
             <section id="contenedor_loguin">
@@ -58,7 +58,7 @@
 
                     <div id="menu_contenedor_img">
 
-                        <img src="../img/logo.png">
+                        <img src="../img/Equipo4-naranja.png">
 
                     </div>
 
@@ -68,24 +68,12 @@
 
                         <li><a href="#">Calendario</a></li>
                         <li><a href="#">Ayuda</a></li>
-                        <li><a href="logout.php">Cerrar sesión</a></li>
 
                     </ul>
 
                     </div>
 
                 </nav>
-
-                <form id="formulario" action="../../controllers/CRestControladorEquipo.php" method="post">
-                    <label for="input_nombre_equipo">Nombre Equipo:</label>
-                    <input type="text" name="nombre_equipo" id="input_nombre_equipo" placeholder="Nombre">
-                    <label for="input_escudo">Escudo:</label>
-                    <input type="text" name="escudo" id="input_escudo" placeholder="escudo">
-                    <label for="input_escudo">Nombre de la Liga:</label>
-                    <!-- Añadido--><input type="text" name="nombre_liga" id="input_nombre_liga" placeholder="Nombre de la Liga">
-                    <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
-                </form>
-
                 <div id="contenedor_slider">
                     <div class = "titular"><h1>DESTACADOS</h1></div>
                     <div id="slider">
@@ -121,20 +109,20 @@
                     <div id="jugadores_destacados">
 
                         <div class="jugador_destacado">
-                            <div class="contenido_jugador_destacado">
-
+                            <div class="contenido_jugador_destacado" id="jugador1">
+                                <h2></h2>
                             </div>
                         </div>
 
                         <div class="jugador_destacado">
-                            <div class="contenido_jugador_destacado">
-
+                            <div class="contenido_jugador_destacado" id="jugador2">
+                                <h2></h2>
                             </div>
                         </div>
 
                         <div class="jugador_destacado">
-                            <div class="contenido_jugador_destacado">
-
+                            <div class="contenido_jugador_destacado" id="jugador3">
+                                <h2></h2>
                             </div>
                         </div>
 
@@ -144,33 +132,33 @@
 
                         <div class="equipo_destacado">
                             <div class="contenido_equipo_destacado">
-                                <div class="contenido_equipo_imagen">
-                                    <img src="../img/escudos/Equipo1-amarillo.png">
+                                <div class="contenido_equipo_imagen" id="imagen1">
+
                                 </div>
                                 <div class="contenido_equipo">
-                                    <span id="vermas"><h2>NOMBRE EQUIPO</h2></span>
+                                    <span id="vermas"><h2></h2></span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="equipo_destacado">
                             <div class="contenido_equipo_destacado">
-                                <div class="contenido_equipo_imagen">
-                                    <img src="../img/escudos/Equipo1-amarillo.png">
+                                <div class="contenido_equipo_imagen" id="imagen2">
+
                                 </div>
                                 <div class="contenido_equipo">
-                                    <span id="vermas2"><h2>NOMBRE EQUIPO</h2></span>
+                                    <span id="vermas2"><h2></h2></span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="equipo_destacado">
                             <div class="contenido_equipo_destacado">
-                                <div class="contenido_equipo_imagen">
-                                    <img src="../img/escudos/Equipo1-amarillo.png">
+                                <div class="contenido_equipo_imagen" id="imagen3">
+
                                 </div>
                                 <div class="contenido_equipo">
-                                    <span id="vermas3"><h2>NOMBRE EQUIPO</h2></span>
+                                    <span id="vermas3"><h2></h2></span>
                                 </div>
                             </div>
                         </div>
@@ -187,6 +175,21 @@
                         <a class="twitter-timeline" data-lang="es" data-height="452" data-link-color="#19CF86" href="https://twitter.com/BasketmunioTS">Tweets by BasketmunioTS</a>
                     </div>
                 </div>
+
+
+                <form id="formulario" action="../controllers/CRestControladorEquipo.php" method="post">
+
+                    <label for="input_nombre_equipo">Nombre Equipo:</label>
+                    <input type="text" name="nombre_equipo" id="input_nombre_equipo" placeholder="Nombre">
+
+                    <label for="input_escudo">Escudo:</label>
+                    <input type="text" name="escudo" id="input_escudo" placeholder="escudo">
+
+                    <label for="input_escudo">Nombre de la Liga:</label>
+       <!-- Añadido--><input type="text" name="nombre_liga" id="input_nombre_liga" placeholder="Nombre de la Liga">
+
+                    <input type="submit" name="envio_registro" id="button_registro" value="Enviar">
+                </form>
 
             </section>
 

@@ -22,10 +22,11 @@ class CRestEquipo{
 
     public function __construct()
     {
-        if(isset($_POST['nombre_liga']))
+        if(isset($_POST['nombre_equipo']))
             $this->nombre= $_POST['nombre_equipo'];
 
-        if(isset($_POST['nombre_liga']))
+
+        if(isset($_POST['escudo']))
             $this->escudo= $_POST['escudo'];
 
         if(isset($_POST['nombre_liga']))
@@ -53,7 +54,9 @@ class CRestEquipo{
 
         //$usuario = new CUser();
 
-        $this->datos['id_usuario']=$_SESSION['id_usuario'];
+       $this->datos['id_usuario']=$_SESSION['id_usuario'];
+
+        //$this->datos['id_usuario']= 1;
 
         /*var_dump($this->datos);
         die();*/
@@ -61,34 +64,72 @@ class CRestEquipo{
         $this->datos['id_liga'] = $liga->getIdNombre($this->nombreLiga);
         //$this->datos['id_liga']=$liga->
 
-        var_dump("datos");
+      /*  var_dump("datos");*/
+
+      var_dump($this->datos);
 
 
         $equipo->setEquipo($this->datos);
 
     }
 
-    public function mostrarEquipoUsuario(){
 
-        session_start();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function equiposDestacados(){
+
         $equipo = new CEquipo();
-        $idUsuario = $_SESSION['id_usuario'];
 
-        $equiposUsuarios = $equipo->muestraExtraccionEquiposUsuario($idUsuario);
+        $resultado = $equipo->muestraEquipoDestacado();
 
-        return $equiposUsuarios;
+        return $resultado;
+
     }
 
-    public function infoMiEquipo($idEquipo){
-        session_start();
+
+    public function escudosDestacados(){
 
         $equipo = new CEquipo();
 
-        $idUsuario = $_SESSION['id_usuario'];
+        $resultado = $equipo->muestraEscudoDestacado();
 
-        $infoEquipo = $equipo->obtenInfoMiEquipo($idUsuario, $idEquipo);
-
-        return $infoEquipo;
+        return $resultado;
 
     }
+
+    public function jugadoresDestacados(){
+
+        $equipo = new CEquipo();
+
+        $resultado = $equipo->muestraJugadoresDestacado();
+
+        return $resultado;
+
+    }
+
+
 }

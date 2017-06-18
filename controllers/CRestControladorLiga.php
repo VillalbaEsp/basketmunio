@@ -1,23 +1,24 @@
 <?php
 
-require_once ("RegistroLiga.php");
+require_once("LigaController.php");
 
 $controladorLiga = new CRestLiga();
 
-if(isset($_POST['ejecutar'])) {
-    if ($_POST['ejecutar'] == "creaLiga") {
+if(isset($_POST['ejecutar'])){
+    if($_POST['ejecutar'] == "creaLiga"){
         $controladorLiga->addLiga();
 
     }
 
-    $prueba = array("hola", "adios");
+    if($_POST['ejecutar'] == "muestraLiga"){
 
-
-    if ($_POST['ejecutar'] == "muestraLiga") {
-
-        $tablaLiga = $controladorLiga->muestraLigas();
-        echo json_encode($tablaLiga);
-
+        $tablaLiga=$controladorLiga->muestraLigas();
+            echo json_encode($tablaLiga);
     }
-}
 
+    if($_POST['ejecutar'] == "mercado"){
+        $equipo->mercado();
+        return true;
+    }
+
+}

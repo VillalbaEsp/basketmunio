@@ -76,30 +76,108 @@ $(document).ready(function() {
         });
     });
 
-   /* jQuery.fn.creaTip = function(textoTip) {
-        this.each(function(){
-            elem = $(this);
-            var miTip = $('<div class="tip">' + textoTip + '</div>');
-            $(document.body).append(miTip);
-            elem.data("capatip", miTip);
 
-            elem.mouseenter(function(e){
-                var miTip = $(this).data("capatip");
-                miTip.css("left", e.pageX);
-                miTip.css("top", e.pageY + 10);
-                miTip.show(700);
-            });
-        });
+    $.ajax({
+        type: 'POST',
+        url: "../../controllers/CRestControladorEquipo.php", //hay que poner 2 ../ por que aqui no tengo la estructura view
+        data: {ejecutar : "equipoDestacado"},
+        dataType:"json",
+        success: function(data) {
 
-        return this;
-    };
 
-    var contenido = "estadounidense Harman por 8.000 millones de dólares, una maniobra dirigida a ingresar en el creciente mercado de la tecnología para autos conectados y que le permite estar a la altura de otras competidoras actuales.El consejo de administración del primer fabricante mundial de telefonía móvil dio luz verde a esta operación que se realizará al contado, a 112 dólares la acción,según un comunicado de Samsung.Las empresa tecnológicas están apostando muy fuerte por este tipo de vehículo";
-    $("#vermas").creaTip(contenido);
 
-    $(".tip").click(function () {
-        $(".tip").hide(700);
-    })*/
+            for(var i = 0; i<3; i++){
+
+                if(i == 0){
+                    $('#vermas h2').append( data[i]);
+                }
+                if(i == 1){
+                    $('#vermas2 h2').append( data[i]);
+                }
+                if(i == 2){
+                    $('#vermas3 h2').append( data[i]);
+                }
+
+
+            }
+        }
+    });
+
+    /*if($.ajax){
+        $("#nombre_liga").val("");
+        $("#formulario_creacion").append("<div id='caja_mensaje'><p>Liga Creada Correctamente</p></div>");
+    }*/
+
+    $.ajax({
+        type: 'POST',
+        url: "../../controllers/CRestControladorEquipo.php", //hay que poner 2 ../ por que aqui no tengo la estructura view
+        data: {ejecutar : "escudoDestacado"},
+        dataType:"json",
+        success: function(data) {
+
+
+
+            for(var i = 0; i<3; i++){
+
+                if(i == 0){
+                    $('#imagen1').append("<img  src='../img/escudos/"+data[i]+"'>" );//hay que añadir ../
+                }
+                if(i == 1){
+                    $('#imagen2').append("<img  src='../img/escudos/"+data[i]+"'>");//hay que añadir ../
+                }
+                if(i == 2){
+                    $('#imagen3').append("<img  src='../img/escudos/"+data[i]+"'>");//hay que añadir ../
+                }
+
+
+            }
+        }
+    });
+
+
+    $.ajax({
+        type: 'POST',
+        url: "../../controllers/CRestControladorEquipo.php", //hay que poner 2 ../ por que aqui no tengo la estructura view
+        data: {ejecutar : "jugadorDestacado"},
+        dataType:"json",
+        success: function(data) {
+
+             $.each(data,function(i,j){
+                $.each(j,function (k,t) {
+                        //$.parseJSON(data[k])
+                        console.log(t);
+                    if(i == 0){
+                        $('#jugador1 h2').append(t+" | ");
+                    }
+                    if(i == 1){
+                        $('#jugador2 h2').append(t+" | ");
+
+                    }
+                    if(i == 2){
+                        $('#jugador3 h2').append(t+" | ");
+                    }
+                })
+             });
+
+            /*
+            /*for(var i = 0; i<3; i++){
+                for(var j=0; j< data[i].length;j++){
+                    if(i == 0){
+                        $('#jugador1 h2').append( data[i]);
+                    }
+                    if(i == 1){
+                        $('#jugador2 h2').append( data[i]);
+                    }
+                    if(i == 2){
+                        $('#jugador3 h2').append( data[i]);
+                    }
+                }
+
+
+            }*/
+        }
+    });
+
 
 
 });
