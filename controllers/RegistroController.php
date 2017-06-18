@@ -128,12 +128,8 @@ class CRestRegistro{
             $usuario->confirmacionUser($this->codigo);
 
         }
-
-
-
     }
 
-//$codigo = "23674D";
 
   private function generarCodigo($longitud) {
         $key = '';
@@ -144,10 +140,50 @@ class CRestRegistro{
         return $key;
   }
 
+    public function olvidoPassword($email)
+    {
+
+        $usuario = new CUser();
+
+        $this->codigo = $this->generarCodigo(14);
+
+        if ($usuario->ponerCodigoPassword($email, $this->codigo)) {
+            $this->envioMailPassword($this->codigo);
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    private function envioMailPassword(){
 
 
+        $mensaje = "Para poder recuperar tu contrañseña accede al siguiente enlace:
+        http://www.basketmunio.esy.es/view/html/olvido-password.php?codigo=".$this->codigo;
 
+        $asunto = "Activación de tu cuenta en Basketmunio";
 
+        $cabeceras = 'From: basketmunio@gmail.com' . "\r\n" .
+            'Reply-To: basketmunio@gmail.com' . "\r\n";
+
+        mail($this->email, $asunto, $mensaje, $cabeceras);
+
+    }
+
+    public function nuevaPassword( $codigoUrl, $password){
+
+        $usuario = new CUser();
+
+        $this->password = $password;
+
+        $this->codigo = $codigoUrl;
+
+        if($usuario->ponerNuevaPassword( $this->codigo, $this->password))
+            return true;
+        else
+            return false;
+
+    }
 
 
 

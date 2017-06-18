@@ -112,13 +112,21 @@ function validaEmail(){
     }
 }
 
-
 // Perdida de foco
-inputApodo.blur(validaApodo);
-inputNombre.blur(validaNombre);
-inputApellidos.blur(validaApellidos);
-inputEmail.blur(validaEmail);
-inputPassword1.blur(validaPassword1);
-inputPassword2.blur(validaPassword2);
+    inputApodo.blur(validaApodo);
+    inputNombre.blur(validaNombre);
+    inputApellidos.blur(validaApellidos);
+    inputEmail.blur(validaEmail);
+    inputPassword1.blur(validaPassword1);
+    inputPassword2.blur(validaPassword2);
 
+$('#formulario').submit(function (e) {
+// Perdida de foco
+    if(validaApodo() && validaNombre() && validaApellidos() && validaEmail() && validaPassword1() && validaPassword2()){
+        $('#formulario').attr("action", "../../controllers/CRestControladorRegistroUser.php");
+        $('form#login').submit();
+    }else{
+        $('#msg_valida').css('display', 'block');
+    }
+})
 });

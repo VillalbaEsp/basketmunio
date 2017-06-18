@@ -9,16 +9,11 @@ $(document).ready(function(){
             data: {codigo: codigo, ejecuta: "activaUser"},
             dataType: 'json',
             success: function (data) { //true
-                if(data.success == true){
-                    alert('success');
-                    window.location.href = "registro-correcto.php?success";
+                    if(data['estado'] == 'correcto')
+                        window.location.href = "registro-correcto.php?success";
+                    if(data['estado'] == 'incorrecto')
+                        window.location.href = "registro-correcto.php?error";
                 }
-
-            },
-
-            error: function (data) { //false
-                window.location.href = "registro-correcto.php?error";
-            }
         });
     });
 });
