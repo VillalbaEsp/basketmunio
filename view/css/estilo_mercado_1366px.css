@@ -140,11 +140,15 @@ ul li .secundario {
     border-top-right-radius: 30px;
 }
 
-#caja_jugadores ul{
+#caja_jugadores li{
     margin-left: 0px;
 }
 
-
+#contenedor_jugadores{
+    height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
+}
 /*#caja_jugadores li{
 
     list-style: none;
@@ -191,6 +195,8 @@ ul li .secundario {
 #contenido_mercado{
     width: 100%;
     height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .fila{

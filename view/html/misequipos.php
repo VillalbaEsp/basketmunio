@@ -77,6 +77,7 @@
 
                 <select>
                     <option>Selecciona tu equipo</option>
+                    <!-- CONTENIDO POR jQUERY -->
                 </select>
 
             </div>
@@ -84,6 +85,9 @@
 
             <div id="caja_jugadores">
                 <div class="titular"><h1>PLANTILLA</h1></div>
+                <div id="lista_jugadores">
+                    <!-- CONTENIDO POR jQUERY -->
+                </div>
 
             </div>
 
@@ -93,7 +97,7 @@
                     <span id="jugador1"></span><span id="jugador2"></span><span id="jugador3"></span><span id="jugador4"></span><span id="jugador5"></span>
                 </div>
                 <div id="caja_estadistica">
-
+                    <!-- CONTENIDO POR jQUERY -->
                 </div>
 
             </div>
