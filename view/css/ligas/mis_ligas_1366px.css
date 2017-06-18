@@ -176,61 +176,6 @@ ul li .secundario {
 
 /* CSS específico para mis_ligas.php */
 
-#tabla_misligas{
-    width: 20%;
-    border: 2px solid black;
-}
-
-#tabla_misligas td{
-    width: 20%;
-    border: 2px solid black;
-}
-
-#clasificacion_miliga{
-    width: 20%;
-    border: 2px solid black;
-}
-
-/* TABLA MIS LIGAS */
-
-#contenedor_tabla_misligas{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 75px;
-    margin-left: 90px;
-}
-
-.tabla-misligas {
-    border: solid 1px #DDEEEE;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font: normal 13px Arial, sans-serif;
-}
-.tabla-misligas thead th {
-    background-color: #DDEFEF;
-    border: solid 1px #DDEEEE;
-    color: #336B6B;
-    padding: 10px;
-    text-align: left;
-    text-shadow: 1px 1px 1px #fff;
-}
-.tabla-misligas tbody td {
-    border: solid 1px #DDEEEE;
-    color: #333;
-    padding: 10px;
-    text-shadow: 1px 1px 1px #fff;
-}
-.tabla-misligas-zebra tbody tr:nth-child(odd) {
-    background-color: #fff;
-}
-.tabla-misligas-zebra tbody tr:nth-child(even) {
-    background-color: #EEF7EE;
-}
-.tabla-misligas-horizontal tbody td {
-    border-left: none;
-    border-right: none;
-}
-
 /* TABLA CLASIFICACIÓN DE UNA LIGA */
 
 #contenedor_clasificacion_miliga{

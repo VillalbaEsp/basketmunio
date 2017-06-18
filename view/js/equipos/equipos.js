@@ -11,7 +11,7 @@ var escudo;
     $("#button_registro").click(function () {
         var nombre_equipo = $("#nombre_equipo").val();
         var nombre_liga = $("#nombre_liga").val();
-        console.log("hola");
+
         $.ajax({
             type: 'POST',
             url: "../../controllers/CRestControladorEquipo.php", //hay que poner 2 ../ por que aqui no tengo la estructura view

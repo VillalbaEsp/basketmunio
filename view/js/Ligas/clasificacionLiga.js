@@ -9,50 +9,56 @@ $( document ).ready(function() {
         success: function (data) {
 
             $.each(data,function(indice,objeto){
-                var liga;
-                var equipo;
+                var nombreLiga;
+                var nombreEquipo;
+                var idLiga;
                 $.each(objeto,function (propiedad, valor) {
-                        if(propiedad == '3')
-                            liga= valor;
-                        if(propiedad == '1')
-                            equipo = valor;
-
+                        if(propiedad == 1)
+                            nombreEquipo= valor;
+                        if(propiedad == 2)
+                            idLiga = valor;
+                        if(propiedad == 3)
+                            nombreLiga = valor;
                 })
-                $('#tabla_misligas tbody').append("<tr><td>"+liga+"</td><td>"+equipo+"</td></tr>")
+                $('#select_misliga').append("<optgroup label='Liga: "+nombreLiga+"'>");
+                $('#select_misliga').append("<option value='"+idLiga+"'>Equipo: "+nombreEquipo+"</option>");
             });
         }
     });
 
-    $( "#select_equipo select" ).change(function () {
+    $( "#select_misliga" ).change(function () {
 
-        var idEquipo = $(this).val();
+        var idLiga = $(this).val();
+        $( "#contenedor_clasificacion_miliga table tbody" ).empty();
 
         $.ajax({
             type: 'POST',
-            url: "../../controllers/CRestControladorEquipo.php",
-            data: {metodo: "muestraInfo", idEquipo: idEquipo},
+            url: "../../controllers/CRestControladorLiga.php",
+            data: {ejecutar: "clasificacion", idLiga: idLiga},
             dataType: "json",
             success: function (data) {
 
                 var nombre;
 
-                $.each(data,function(i,j){
-                    $.each(j,function (k, t) {
-                        if(i != 'mejores'){
-                            if(k == 'nombre_jugador')
-                                nombre = '<li style="te">Nombre: '+ t +'';
-                            if(k == 'posicion_jugador')
-                                $('.titular').append( nombre + '     <br>Posición: ' + t +'</li>');
-                            if(k == 'nombre_jugador' && i < 6)
-                                $("#caja_imagen").append("<span id='jugador" + i + "'>" + t + "</span>");
-
-                        }
+                $.each(data,function(indice,objeto){
+                    var propietario;
+                    var nombreEquipo;
+                    var puntos;
+                    var posicion = 1;
+                    $.each(objeto,function (propiedad, valor) {
+                        if(propiedad == 'nombre_equipo')
+                            nombreEquipo= valor;
+                        if(propiedad == 'apodo_usuario')
+                            propietario = valor;
+                        if(propiedad == 'pts_equipo')
+                            puntos = valor;
                     })
+                    $('#contenedor_clasificacion_miliga table tbody').append("<tr><td>"+posicion+"</td><td>"+nombreEquipo+"</td><td>"+propietario+"</td><td>"+puntos+"</td></tr>");
+                    posicion++;
                 });
 
-                $('#caja_estadistica').append("<li>Jugador con mayor puntuación: </li>" + data['mejores'][0] + "<li>Jugador con más asistencias: </li>" + data['mejores'][1] + "<li>Jugador que coge más rebotes defensivos: </li>" + data['mejores'][2] + "<li>Jugador que coge más rebotes ofensivos: </li>" + data['mejores'][3] + "<li>Jugador con mas tapones: </li>" + data['mejores'][4] + "<li>Jugador con mas robos: </li>" + data['mejores'][5] + "");            }
-
-        })
+        }
+        });
 
     });
 });
