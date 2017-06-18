@@ -1,4 +1,4 @@
-@media screen and (max-width:1366px) {
+@media screen and (max-width: 1366px) {
 
     #contenedor_loguin{
 
@@ -21,4 +21,12 @@
         padding-top:20px;
     }
 
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 42%;
+
+    }
 }
