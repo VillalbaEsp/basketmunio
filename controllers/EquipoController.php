@@ -66,7 +66,7 @@ class CRestEquipo{
 
       /*  var_dump("datos");*/
 
-      var_dump($this->datos);
+     /* var_dump($this->datos);*/
 
 
         $equipo->setEquipo($this->datos);
