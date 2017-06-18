@@ -4,10 +4,19 @@
 		
     <head>
         <meta charset="utf-8">
-        <title>Basketmunio_login</title>
+        <title>Basketmunio</title>
         <link rel="stylesheet" href="../css/ligas/mis_ligas_1366px.css">
         <link rel="stylesheet" href="../css/fontello.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script src="../js/Ligas/clasificacionLiga.js"></script>
+
+        <?php
+        session_start();
+        if(!isset($_SESSION['id_usuario']))
+            header("Location: /basketmunio/view/html/login.php");
+
+        ?>
         
     </head>
         
@@ -66,7 +75,7 @@
             </nav>
 
             <div id="contenedor_tabla_misligas">
-                <table class="tabla-misligas tabla-misligas-zebra tabla-misligas-horizontal">
+                <table id="tabla_misligas" class="tabla-misligas tabla-misligas-zebra tabla-misligas-horizontal">
                     <thead>
                     <tr>
                         <th>Liga</th>
@@ -74,26 +83,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Liga1</td>
-                        <td>Equipo1</td>
-                    </tr>
-                    <tr>
-                        <td>Liga2</td>
-                        <td>Equipo2</td>
-                    </tr>
-                    <tr>
-                        <td>Liga3</td>
-                        <td>Equipo3</td>
-                    </tr>
-                    <tr>
-                        <td>Liga4</td>
-                        <td>Equipo4</td>
-                    </tr>
-                    <tr>
-                        <td>Liga5</td>
-                        <td>Equipo5</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>

@@ -119,9 +119,6 @@ class CEquipo {
 
         }
 
-       /* var_dump($this->listaBorrados);*/
-
-
     }
 
 
@@ -156,8 +153,9 @@ class CEquipo {
 
             }
 
-			
+
         }
+
 
         $consulta= $this->mysqli->query("SELECT * FROM equipos WHERE id_liga=".$this->array_fields['id_liga']."&& nombre_equipo='".$this->array_fields['nombre_equipo']."'");
                                                                                 /*AÑADIDO*/
@@ -215,6 +213,99 @@ class CEquipo {
 
     }
 
+    public function muestraExtraccionEquiposUsuario($idUsuario){
+        $res = $this->extraeEquiposUsuario($idUsuario);
+        return $res;
+    }
+
+    private function extraeEquiposUsuario($idUsuario){
+
+        $res = $this->mysqli->query("SELECT id_equipo, nombre_equipo FROM equipos WHERE id_usuario=".$idUsuario."");
+
+        $info = array ();
+
+        while($row = $res->fetch_assoc()){
+            array_push($info, $row);
+        }
+
+        return ($info);
+
+    }
+
+    public function obtenInfoMiEquipo($idUsuario, $idEquipo){
+
+        $res = $this->extraeInfoMiEquipo($idUsuario, $idEquipo);
+
+        return $res;
+
+    }
+
+    private function extraeInfoMiEquipo($idUsuario, $idEquipo){
+
+        $res = $this->mysqli->query("SELECT j.nombre_jugador, j.posicion_jugador, j.id_jugador FROM jugadores_equipos je, jugadores j WHERE je.id_usuario=".$idUsuario." AND je.id_equipo=".$idEquipo." AND j.id_jugador=je.id_jugador");
+
+        $info = array ();
+
+        while($row = $res->fetch_assoc()){
+            array_push($info, $row);
+        }
+
+        $stringID="";
+
+        foreach ($info as $key){
+            foreach ($key as $key2 => $value) {
+                if ($key2 == 'id_jugador') {
+                    $stringID.= $value.",";
+                }
+            }
+        }
+        // Contiene todos los ID de los juegadores del equipo
+        $stringID = substr($stringID, 0, -1);
+
+        //ALMACENA LOS MEJORES JUGADORES
+        $mejores= array();
+
+        //Jugador con mayor puntuación: pts_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.pts_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        //Jugador con más asistencias:ast_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.ast_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        //Jugador que coge más rebotes defensivos: dreb_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.dreb_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        //Jugador que coge más rebotes ofensivos: oreb_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.oreb_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        //Jugador con mas tapones: blk_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.blk_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        //Jugador con mas robos: stl_estadistica_total
+        $res = $this->mysqli->query("SELECT id_jugador FROM estadisticas_totales WHERE id_jugador IN (" . $stringID . ") ORDER BY estadisticas_totales.stl_estadistica_total DESC");
+        $res = $res->fetch_assoc();
+        array_push($mejores,$res['id_jugador']);
+
+        $nombresMejores= array();
+        foreach ($mejores as $key => $value) {
+            $res = $this->mysqli->query("SELECT nombre_jugador FROM `jugadores` WHERE id_jugador=".$value."");
+            $res = $res->fetch_assoc();
+            array_push($nombresMejores,$res['nombre_jugador']);
+        }
+
+        $info['mejores'] = $nombresMejores;
+
+        return ($info);
+    }
 
 
     public function muestraEquipoDestacado(){
@@ -291,7 +382,6 @@ class CEquipo {
 
         return $resultado;
     }
-
 
 
 

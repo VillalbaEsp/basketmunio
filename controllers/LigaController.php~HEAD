@@ -68,6 +68,17 @@ class CRestLiga{
 
     }
 
+    public function mercado(){
+
+        $liga= new CLiga();
+        $jugadores=$liga->mostrarLigas($this->search);
+
+        return jugadores();
+
+    }
+
+
+
 
 }
 
