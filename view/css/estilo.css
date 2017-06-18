@@ -1,12 +1,18 @@
+
+
+@import url('loguin/estilo_loguin_1024px.css');
+@import url('loguin/estilo_loguin_1366px.css');
+
+
 html{
     width: 100%;
-    height: 100%;
+    height: 960px;
     font-family: 'Roboto', sans-serif;
 }
 
 body{
     width: 100%;
-    height: 100%;
+    height:960px;
     margin: 0%;
 }
 
@@ -15,7 +21,7 @@ body{
 #contenedor_loguin{
     
     width: 100%;
-    height: 79.1%;/*550px;*/;
+    height: 770px;/*550px;*/;
     background-image:url(../img/ima.jpg);
     background-size: cover;
     background-position: center center;
@@ -39,58 +45,11 @@ body{
 
 }
 
-#menu_contenedor_ul{
-    z-index: 1000;
-    width: 22%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 9%;
-}
-
 #menu_contenedor_img img{
     width: 50%;
     height: 100%;
     opacity: 1;
 }
-
-
-
-#menu_contenedor_ul ul {
-    list-style: none;
-}
-
-#menu_contenedor_ul ul li {
-    display: inline-block;
-    position: relative;
-}
-
-#menu_contenedor_ul ul li:hover {
-    background-color: rgba(255,255,255,0.3);
-}
-
-#menu_contenedor_ul ul li a {
-    color: white;
-    display: block;
-    text-decoration: none;
-    padding: 20px;
-}
-
-ul li a{
-    margin-right: 10px;
-}
-
-ul li:hover .secundario {
-    display: block;
-}
-
-ul li .secundario {
-    display: none;
-    background-color: #004F7C;
-    position: absolute;
-    width: 150%;
-}
-
 
 #form_loguin{
     
@@ -180,7 +139,7 @@ ul li .secundario {
 #contenedor_footer{
     
     width: 98%;
-    height:17%;
+    height:166px;
     background-color: #004F7C;
     padding: 1%;
 }
@@ -221,18 +180,4 @@ ul li .secundario {
 
 
 
-@media only screen and (mim-width: 1920px) {
-    body {
-        border: 2px solid red;
-    }
-}
 
-
-@media only screen and (max-width: 1920px){
-    
-    body{
-        
-        
-    }
-    
-}
