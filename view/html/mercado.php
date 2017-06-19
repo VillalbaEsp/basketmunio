@@ -90,7 +90,9 @@
         <div id="caja_jugadores">
             <div class="titular"><h1>PLANTILLA</h1></div>
             <div id="contenedor_jugadores">
-                <!-- CONTENIDO CON jQUERY -->
+                <div id="contenido_jugadores">
+                    <!-- CONTENIDO CON jQUERY -->
+                </div>
             </div>
         </div>
 
