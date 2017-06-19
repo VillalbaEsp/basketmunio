@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/equipos/equipos.js"></script>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <?php
     session_start();
