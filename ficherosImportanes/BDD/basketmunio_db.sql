@@ -19,7 +19,7 @@ create table `usuarios`
 1: cuenta activada',
   primary key (`id_usuario`),
  unique `id_usuario` (`id_usuario`)
-) engine = innodb
+)
 ;
 
 alter table `usuarios` add unique `apodo_usuario` (`apodo_usuario`)
@@ -38,7 +38,7 @@ create table `jugadores`
   `precio_jugador` int not null,
   primary key (`id_jugador`),
  unique `id_jugador` (`id_jugador`)
-) engine = innodb
+)
 ;
 
 
@@ -52,7 +52,7 @@ pv: privado',
   `contraseña_liga` varchar(30)
  comment 'tiene contraseña solo si es privada.',
   primary key (`id_liga`)
-) engine = innodb
+)
 ;
 
 
@@ -64,7 +64,7 @@ create table `partidos_reales`
   `equipo_visitante_partido` varchar(60) not null,
   `resultado_partido` varchar(9),
   primary key (`id_partido`)
-) engine = innodb
+)
 ;
 
 
@@ -80,7 +80,7 @@ create table `equipos`
   `pts_equipo` int not null default 0
  comment 'puntos equipo',
   primary key (`id_equipo`,`id_usuario`)
-) engine = innodb
+)
 ;
 
 create index `ix_relationship30` on `equipos` (`id_liga`)
@@ -97,7 +97,7 @@ create table `jugadores_equipos`
   `id_usuario` int,
   `id_jugador` int(11),
   primary key (`id_jugador_equipo`)
-) engine = innodb
+)
 ;
 
 create index `ix_relationship31` on `jugadores_equipos` (`id_equipo`,`id_usuario`)
@@ -127,7 +127,7 @@ create table `jugadores_partidos_reales`
  comment 'rebotes ofensivos',
   `stl_jugador_partido_real` int(2) not null default 0
  comment 'robos'
-) engine = innodb
+)
 ;
 
 alter table `jugadores_partidos_reales` add  primary key (`id_partido`,`id_jugador`)
@@ -154,7 +154,7 @@ create table `estadisticas_totales`
  comment 'rebotes ofensivos',
   `stl_estadistica_total` float(4) not null default 0
  comment 'robos'
-) engine = innodb
+)
 ;
 
 alter table `estadisticas_totales` add  primary key (`id_jugador`)
