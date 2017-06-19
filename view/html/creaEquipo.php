@@ -11,10 +11,10 @@
     <script src="../js/equipos/equipos.js"></script>
 
     <?php
-    session_start();
-    if(!isset($SESION['id_usuario'])){
-        header("Location: /basketmunio/view/html/login.php");
-    }
+        session_start();
+        if(!isset($_SESSION['id_usuario']))
+            header("Location: /basketmunio/view/html/login.php");
+
     ?>
 </head>
 
