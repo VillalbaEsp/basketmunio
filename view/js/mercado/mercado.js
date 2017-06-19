@@ -16,7 +16,7 @@ $( document ).ready(function() {
     $("#select_equipo select").change(function () {
 
         var idEquipo = $(this).val();
-        $('#contenedor_jugadores').empty();
+        $('#contenido_jugadores').empty();
 
         $('#contenido_mercado').empty();
 
@@ -122,7 +122,7 @@ $( document ).ready(function() {
                                 if (k == 'nombre_jugador')
                                     nombre = '<ul style="te">Nombre: ' + t + '';
                                 if (k == 'posicion_jugador')
-                                    $('#contenedor_jugadores').append(nombre + '     <br>Posición: ' + t + '</ul>');
+                                    $('#contenido_jugadores').append(nombre + '     <br>Posición: ' + t + '</ul>');
 
                             }
                         })
