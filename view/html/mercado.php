@@ -56,6 +56,7 @@
                                 <ul class="secundario">
                                     <li><a href="busca_liga.php">Mis ligas</a></li>
                                     <li><a href="mis_ligas.php">Ligas</a></li>
+                                    <li><a href="estadisticas.php">Estadisticas</a></li>
                                 </ul>
                             </li>
 
