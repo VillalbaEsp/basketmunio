@@ -69,23 +69,23 @@
     </nav>
 
     <div id="escudo">
-        <div class="escudo"> <img src="../img/escudos/Equipo1-amarillo.png">Equipo1-amarillo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo1-gris.png">Equipo1-gris.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo1-naranja.png">Equipo1-naranja.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo1-rojo.png">Equipo1-rojo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo1-verde.png">Equipo1-verde.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo2-amarillo.png">Equipo2-amarillo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo2-gris.png">Equipo2-gris.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo2-naranja.png">Equipo2-naranja.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo2-rojo.png">Equipo2-rojo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo2-verde.png">Equipo2-verde.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo3-amarillo.png">Equipo3-amarillo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo3-gris.png">Equipo3-gris.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo3-naranja.png">Equipo3-naranja.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo3-rojo.png">Equipo3-rojo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo3-verde.png">Equipo3-verde.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo4-amarillo.png">Equipo4-amarillo.png</div>
-        <div class="escudo"> <img src="../img/escudos/Equipo4-gris.png">Equipo4-gris.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo1-amarillo.png">Equipo1-amarillo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo1-gris.png">Equipo1-gris.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo1-naranja.png">Equipo1-naranja.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo1-rojo.png">Equipo1-rojo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo1-verde.png">Equipo1-verde.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo2-amarillo.png">Equipo2-amarillo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo2-gris.png">Equipo2-gris.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo2-naranja.png">Equipo2-naranja.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo2-rojo.png">Equipo2-rojo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo2-verde.png">Equipo2-verde.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo3-amarillo.png">Equipo3-amarillo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo3-gris.png">Equipo3-gris.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo3-naranja.png">Equipo3-naranja.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo3-rojo.png">Equipo3-rojo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo3-verde.png">Equipo3-verde.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo4-amarillo.png">Equipo4-amarillo.png</div>
+        <div class="escudo"><img src="../img/escudos/Equipo4-gris.png">Equipo4-gris.png</div>
     </div>
 
     <form id="formulario" method="post">
