@@ -28,7 +28,12 @@ body{
     height: 70px;
     background-color:#004F7C;
 }
-
+#menu_cabecera label{
+    display:none;
+}
+#menu-bar{
+    display:none;
+}
 /*#menu_cabecera:nth-child(3) {
     margin-left: 20%;
 }*/
@@ -103,7 +108,16 @@ ul li .secundario {
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /*CAJA PLANTILLA--------------------------------------------------------------------------------------------------*/
+#select_equipo{
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 40%;
+}
 
+#select_equipo select{
+    width: 300px;
+    height: 50px;
+}
 #caja_contenido{
 
     width: 100%;
@@ -158,7 +172,6 @@ ul li .secundario {
     width: 100px;
     height: 40px;
     list-style: none;
-    border: 2px solid black;
 }
 /*----------------------------------------------------------------------------------------------------------------*/
 /*MERCADO---------------------------------------------------------------------------------------------------------*/
@@ -171,6 +184,8 @@ ul li .secundario {
     margin: 2%;
     border: 10px solid #004F7C;
     border-top-right-radius: 30px;
+    color: #004F7C;
+
 
 }
 .titular{
@@ -191,12 +206,18 @@ ul li .secundario {
 #contenido_mercado{
     width: 100%;
     height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
 }
-
+#contenido_jugadores{
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
+}
 .fila{
     width: 100%;
     height: 40px;
-    border: 2px solid greenyellow;
     list-style: none;
 }
 
@@ -268,3 +289,285 @@ ul li .secundario {
     font-size: 13px;
 }
 /*---------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width:768px) and (max-width: 1340px) {
+
+    html{
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+    #menu-bar:checked ~ .menu_contenedor_ul{
+        transform: translateX(0%);
+    }
+
+    #menu_cabecera label{
+
+        display: inline-block;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+
+    }
+
+    .menu_contenedor_ul{
+        position: absolute;
+        top: 73px;
+        left: -150px;
+        width: 50%;
+        /*height: 100vh;*/
+        background: rgba(0,79,124,0.9);
+        transition: all 0.5s;
+        transform: translateX(-110%);
+    }
+
+
+    .menu_contenedor_ul ul {
+        list-style: none;
+
+    }
+
+    .menu_contenedor_ul ul li {
+        display: block;
+    }
+
+    .menu_contenedor_ul ul li:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
+
+    .menu_contenedor_ul ul li a {
+        color: white;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 500px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 41.5%;
+
+    }
+
+    #contenedor_slider{
+        margin-left: 20%;
+        margin-right: 5%;
+    }
+    #contenedor_loguin{
+        height:1600px;
+    }
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+}
+@media (min-width:380px) and (max-width: 1080px) {
+
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 400px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+}
+
+@media (min-width:380px) and (max-width: 900px) {
+
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 300px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+}
+
+
+
+@media (min-width:380px) and (max-width: 900px) {
+
+    html{
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+
+    #menu-bar:checked ~ .menu_contenedor_ul{
+        transform: translateX(0%);
+    }
+
+    #menu_cabecera label{
+
+        display: inline-block;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+
+    }
+
+    .menu_contenedor_ul{
+        position: absolute;
+        top: 73px;
+        left: -100px;
+        width: 50%;
+        /*height: 100vh;*/
+        background: rgba(0,79,124,0.9);
+        transition: all 0.5s;
+        transform: translateX(-100%);
+    }
+
+
+    .menu_contenedor_ul ul {
+        list-style: none;
+
+    }
+
+    .menu_contenedor_ul ul li {
+        display: block;
+    }
+
+    .menu_contenedor_ul ul li:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
+
+    .menu_contenedor_ul ul li a {
+        color: white;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 270px;
+        width: 200px;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15.5%;
+    }
+    #contenedor_loguin{
+        height: 1600px;
+
+    }
+    #select_equipo{
+        width: 300px;
+        margin-top: 50px;
+        margin-left: 10%;
+    }
+    #caja_jugadores{
+        min-width: 300px;
+    }
+
+    #caja_mercado{
+        min-width: 400px;
+    }
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+
+    @media (min-width:380px) and (max-width: 768px) {
+        ul li:hover .secundario {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 150px;
+            width: 50%;
+        }
+
+        ul li .secundario {
+            display: none;
+            background-color: #004F7C;
+            position: absolute;
+            width: 150%;
+        }
+
+    }
+
+}

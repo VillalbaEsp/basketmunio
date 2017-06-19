@@ -18,8 +18,6 @@ $(document).ready(function() {
             .next('div').fadeIn(2000)
             .end().appendTo('#titulos');}, 8000);
 
-
-
 //DESCRIPCIONES DE LOS EQUIPOS
 
 

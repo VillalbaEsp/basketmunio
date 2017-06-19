@@ -1,9 +1,3 @@
-
-
-@import url('loguin/estilo_loguin_1024px.css');
-@import url('loguin/estilo_loguin_1366px.css');
-
-
 html{
     width: 100%;
     height: 960px;
@@ -28,6 +22,7 @@ body{
     /*background:no-repeat fixed center; */
 
 }
+
 
 #menu_cabecera{
     width: 100%;
@@ -107,6 +102,7 @@ body{
     color: white;
     border: 2px solid #22E363;
     border-radius: 6px;
+    min-width: 100px;
     
 }
 
@@ -120,7 +116,7 @@ body{
     color: white;
     border-radius: 6px;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     
 }
 
@@ -178,6 +174,244 @@ body{
 #info p{
     font-size: 13px;
 }
+
+
+@media (max-width:1366px) {
+
+
+    html{
+        width: 100%;
+        height: 665px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:665px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+    #contenedor_loguin{
+        height:618px;
+        /*background:no-repeat fixed center; */
+    }
+
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 43.5%;
+
+    }
+
+    #form_loguin{
+        width: 58%;
+        height: 430px;
+        margin: auto;
+
+    }
+
+
+    #contenido_form p{
+
+        font-size: 12px;
+        margin-top: 5px;
+
+    }
+
+    #enlace_contraseña_olvidada{
+        width: 120px;
+        font-size: 16px;
+        margin: 1% 33%;
+
+    }
+
+    #contenido_form #button_loguin{
+
+
+        margin: 3% 35%;
+        min-width: 100px;
+
+    }
+
+
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+}
+
+@media (min-width:768px) and (max-width: 1200px) {
+
+    html{
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+    #contenedor_loguin{
+        height:658px;
+        /*background:no-repeat fixed center; */
+    }
+
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 41.5%;
+
+    }
+
+    #form_loguin{
+        width: 58%;
+        height: 530px;
+        margin: auto;
+
+    }
+    #form_loguin input{
+        width: 100%;
+        height: 50px;
+    }
+
+    #contenido_form p{
+
+        font-size: 12px;
+        margin-top: 5px;
+
+    }
+
+    #enlace_contraseña_olvidada{
+        width: 160px;
+        font-size: 16px;
+        margin: 1% 27%;
+
+    }
+
+    #contenido_form #button_loguin{
+
+
+        margin: 3% 30%;
+        min-width:100px;
+
+    }
+
+
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+}
+
+@media (min-width:380px) and (max-width: 768px) {
+
+    html{
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+    #contenedor_loguin{
+        height:658px;
+        /*background:no-repeat fixed center; */
+    }
+
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 33.5%;
+
+    }
+
+    #form_loguin{
+        width: 58%;
+        height: 530px;
+        margin: auto;
+
+    }
+    #form_loguin input{
+        width: 100%;
+        height: 50px;
+    }
+
+    #contenido_form p{
+
+        font-size: 12px;
+        margin-top: 5px;
+
+    }
+
+    #enlace_contraseña_olvidada{
+        width: 160px;
+        font-size: 16px;
+        margin: auto;
+
+    }
+
+    #contenido_form #button_loguin{
+
+
+        margin: 3% 20px;
+        min-width:100px;
+
+    }
+
+
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+}
+
+
 
 
 

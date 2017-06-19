@@ -1,9 +1,11 @@
 $( document ).ready(function() {
+    $("#registro_equipo").hide();
 
 var escudo;
     $(".escudo").click(function () {
-
+        $(".escudo").css("border","2px solid #004F7C");
        escudo=$(this).text();
+       $(this).css("border","2px solid #22E363");
 
     });
 
@@ -18,5 +20,13 @@ var escudo;
             data: {nombre_equipo:nombre_equipo, nombre_liga:nombre_liga, escudo:escudo, ejecutar: "creaEquipo"},
             dataType: "json",
         });
+
+        if($.ajax){
+
+            $("#registro_equipo").show();
+
+        }
     });
+
+
 });

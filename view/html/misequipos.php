@@ -21,56 +21,48 @@
 </head>
 
 <body>
-
+    <section id="contenedor_loguin">
         <nav id="menu_cabecera">
 
-            <!--<input type="checkbox" id="menu-bar">
-            <label class="icon-menu" for="menu-bar"></label>-->
+             <input type="checkbox" id="menu-bar">
+             <label class="icon-menu" for="menu-bar" id="icono-menu"></label>
 
 
 
-            <div class="menu_contenedor_ul">
+              <div id="menu_contenedor_img">
 
-                <ul>
+              <img src="../img/logo.png">
 
-                    <li><a href="#">Inicio</a></li>
+              </div>
+             <div class="menu_contenedor_ul">
 
-                    <li><a href="#">Mis equipos</a>
-                        <ul class="secundario">
-                            <li><a href="#">Plantilla</a></li>
-                            <li><a href="#">Clasificación</a></li>
-                            <li><a href="#">Mercado</a></li>
-                        </ul>
-                    </li>
+                 <ul>
 
-                    <li><a href="#">Ligas</a>
-                        <ul class="secundario">
-                            <li><a href="#">Mis ligas</a></li>
-                            <li><a href="#">Ligas</a></li>
-                        </ul>
-                    </li>
+                     <li><a href="pagina_principal.php">Inicio</a></li>
 
-                </ul>
+                     <li><a href="creaEquipo.php">Mis equipos</a>
+                         <ul class="secundario">
+                             <li><a href="misequipos.php">Plantilla</a></li>
+                             <li><a href="mis_ligas.php">Clasificación</a></li>
+                             <li><a href="mercado.php">Mercado</a></li>
+                         </ul>
+                     </li>
 
-            </div>
+                     <li><a href="busca_liga.html">Ligas</a>
+                         <ul class="secundario">
+                             <li><a href="busca_liga.html">Mis ligas</a></li>
+                             <li><a href="mis_ligas.php">Ligas</a></li>
+                         </ul>
+                     </li>
 
-            <div id="menu_contenedor_img">
 
-                <img src="../img/logo.png">
+                 <li><a href="calendario.php">Calendario</a></li>
+                 <li><a href="ayuda.hmtl">Ayuda</a></li>
+                 <li><a href="logout.php">Cerrar sesión</a></li>
 
-            </div>
+                 </ul>
 
-            <div class="menu_contenedor_ul" id="menu_dcha">
-
-                <ul>
-
-                    <li><a href="#">Calendario</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                    <li><a href="logout.php">Cerrar sesión</a></li>
-
-                </ul>
-
-            </div>
+             </div>
 
         </nav>
             <div id="select_equipo">

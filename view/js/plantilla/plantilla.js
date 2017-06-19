@@ -33,7 +33,7 @@ $( "#select_equipo select" ).change(function () {
                             nombre = '<li style="te">Nombre: '+ t +'';
                         if(k == 'posicion_jugador')
                             $('.titular').append( nombre + '     <br>Posición: ' + t +'</li>');
-                        if(k == 'nombre_jugador' && i < 6)
+                        if(k == 'nombre_jugador' && i < 6 )
                         $("#caja_imagen").append("<span id='jugador" + i + "'>" + t + "</span>");
 
                     }
