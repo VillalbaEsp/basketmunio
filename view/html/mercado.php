@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Basketmunio_login</title>
+    <title>Basketmunio</title>
     <link rel="stylesheet" href="../css/estilo_mercado_1366px.css">
     <link rel="stylesheet" href="../css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
