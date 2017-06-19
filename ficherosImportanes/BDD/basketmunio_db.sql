@@ -203,6 +203,3 @@ alter table `jugador_libre` add constraint `relationship33` foreign key (`id_jug
 
 alter table `jugador_libre` add constraint `relationship37` foreign key (`id_liga`) references `ligas` (`id_liga`) on delete cascade on update cascade
 ;
-
-
-

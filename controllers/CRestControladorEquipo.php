@@ -36,8 +36,11 @@ if(isset($_POST['ejecutar'])){
         return true;
     }
 
-
-
+    if($_POST['ejecutar'] == "estadisticas"){
+        $estadisticas = $equipo->mostrarEstadisticas($_POST['equipo']);
+        echo json_encode($estadisticas);
+        return true;
+    }
 }
 
 

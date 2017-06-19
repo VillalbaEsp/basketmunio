@@ -127,18 +127,15 @@ class CEquipo {
     //ESTA FUNCION ES PRIVADA Y VA DENTRO DE SET EQUIPO
     private function  creaPlantilla(){
 
-        /*$liga = new CLiga;
-
-        $idLiga= $liga->getId();*/
         $this->ListaBorrados();
-        //$idLiga = 1;
+
         $i = 0;
 
         while($i<10) {
 
             $numero = mt_rand(1, 453);
             //HAY QUE PASARLE EL ID LIGA
-            //$numero = 5;
+
             if(!in_array($numero , $this->listaBorrados)){
 
 
@@ -160,11 +157,6 @@ class CEquipo {
         $consulta= $this->mysqli->query("SELECT * FROM equipos WHERE id_liga=".$this->array_fields['id_liga']."&& nombre_equipo='".$this->array_fields['nombre_equipo']."'");
                                                                                 /*AÑADIDO*/
         $equipo = $consulta->fetch_assoc();
-        //var_dump($equipo);
-
-
-/*var_dump($this->array_fields['jugadores_equipo'][0]['id_jugador']);
-        die();*/
 
 
 
@@ -188,13 +180,9 @@ class CEquipo {
     }
 
 
-    /**
-     * @return array
-     */
     private function borraJugadorsLibre()
     {
 
-    //$liga = 1;
         foreach ($this->array_fields['jugadores_equipo'] as $key ){
 
 
@@ -383,6 +371,25 @@ class CEquipo {
         return $resultado;
     }
 
+    public function obtenEstadisticas($idEquipo){
 
+        $estadisticas = $this->extraeEstadisticas($idEquipo);
+
+        return $estadisticas;
+    }
+
+    private function extraeEstadisticas($idEquipo){
+
+        if( $idEquipo == 'todos'){
+            $res = $this->mysqli->query("SELECT j.nombre_jugador, et.* FROM estadisticas_totales et, jugadores j WHERE j.id_jugador=et.id_jugador");
+            $resultado = $res->fetch_all();
+            return $resultado;
+        }else{
+            $res = $this->mysqli->query("SELECT j.nombre_jugador, et.* FROM jugadores_equipos je, jugadores j, estadisticas_totales et WHERE je.id_equipo=".$idEquipo." AND j.id_jugador=je.id_jugador AND je.id_jugador=et.id_jugador");
+            $resultado = $res->fetch_all();
+            return $resultado;
+        }
+
+    }
 
 }

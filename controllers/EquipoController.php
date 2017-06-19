@@ -52,22 +52,9 @@ class CRestEquipo{
 
        /*Añadido*/ $liga = new CLiga();
 
-        //$usuario = new CUser();
-
        $this->datos['id_usuario']=$_SESSION['id_usuario'];
 
-        //$this->datos['id_usuario']= 1;
-
-        /*var_dump($this->datos);
-        die();*/
-
         $this->datos['id_liga'] = $liga->getIdNombre($this->nombreLiga);
-        //$this->datos['id_liga']=$liga->
-
-      /*  var_dump("datos");*/
-
-     /* var_dump($this->datos);*/
-
 
         $equipo->setEquipo($this->datos);
 
@@ -129,5 +116,12 @@ class CRestEquipo{
 
     }
 
+    public function mostrarEstadisticas($idEquipo){
+        $equipo = new CEquipo();
 
+        $estadisticas = $equipo->obtenEstadisticas($idEquipo);
+
+        return $estadisticas;
+
+    }
 }
