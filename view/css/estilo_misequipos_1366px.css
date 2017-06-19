@@ -33,22 +33,31 @@ body{
 /*#menu_cabecera:nth-child(3) {
     margin-left: 20%;
 }*/
+#menu-bar{
+    display: none;
+}
 
+#menu_cabecera label {
+
+display: none;
+
+}
 #menu_contenedor_img{
     width: 150px;
     height: 100%;
     display: inline-block;
     vertical-align: top;
     margin-left: 0%;
-    padding-left: 2%;
+    padding-left: 4%;
 }
 #menu_dcha{
+    width: 400px;
     margin-left: 3%;
     padding-left: 0%;
 }
 .menu_contenedor_ul{
     z-index: 1000;
-    width: 25%;
+    width: 700px;
     height: 100%;
     display: inline-block;
     vertical-align: top;
@@ -62,8 +71,6 @@ body{
     height: 100%;
     opacity: 1;
 }
-
-
 
 .menu_contenedor_ul ul {
     list-style: none;
@@ -105,7 +112,9 @@ ul li .secundario {
 /*----------------------------------------------------------------------------------------------------------------*/
 
 /*CAJA PLANTILLA--------------------------------------------------------------------------------------------------*/
-
+#contenedor_loguin{
+    height: 1000px;
+}
 #caja_plantilla{
 
     width: 80%;
@@ -154,7 +163,8 @@ ul li .secundario {
     list-style: none;
     width: 100%;
     height: 41.5px;
-    border: 2px solid black;
+    border-bottom: 2px solid #004F7C;
+    border-top:2px solid #004F7C;
 
 
 }
@@ -239,8 +249,26 @@ ul li .secundario {
     font-size: 18px;
 
 }
+#select_equipo{
+    width: 300px;
+    height: 70px;
+    margin: auto;
+}
+#select_equipo select{
+    width: 300px;
+    height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px solid #22E363;
+    min-width: 300px;
+}
 
-
+#caja_estadistica li{
+    color:#004F7C;
+}
+.titular li{
+    color: #004F7C;
+}
 /*----------------------------------------------------------------------------------------------------------------*/
 /*FOOTER----------------------------------------------------------------------------------------------------------*/
 #contenedor_footer{
@@ -285,3 +313,282 @@ ul li .secundario {
     font-size: 13px;
 }
 /*---------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width:768px) and (max-width: 1340px) {
+
+    html{
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body{
+        width: 100%;
+        height:765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera{
+        width: 100%;
+        height: 70px;
+        background-color:#004F7C;
+
+    }
+    #menu-bar:checked ~ .menu_contenedor_ul{
+        transform: translateX(0%);
+    }
+
+    #menu_cabecera label{
+
+        display: inline-block;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+
+    }
+
+    .menu_contenedor_ul{
+        position: absolute;
+        top: 73px;
+        left: -150px;
+        width: 50%;
+        /*height: 100vh;*/
+        background: rgba(0,79,124,0.9);
+        transition: all 0.5s;
+        transform: translateX(-110%);
+    }
+
+
+    .menu_contenedor_ul ul {
+        list-style: none;
+
+    }
+
+    .menu_contenedor_ul ul li {
+        display: block;
+    }
+
+    .menu_contenedor_ul ul li:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
+
+    .menu_contenedor_ul ul li a {
+        color: white;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 500px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+
+    #menu_contenedor_img{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 41.5%;
+
+    }
+#contenedor_loguin{
+    height: 1600px;
+}
+    #caja_jugadores{
+    min-width: 300px;
+    }
+
+    #caja_cancha{
+        min-width: 700px;
+    }
+
+    #contenedor_footer{
+
+        width: 98%;
+        height:130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+}
+@media (min-width:380px) and (max-width: 1080px) {
+
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 400px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+}
+
+@media (min-width:380px) and (max-width: 900px) {
+
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 300px;
+        width: 50%;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+}
+
+
+
+@media (min-width:380px) and (max-width: 900px) {
+
+    html {
+        width: 100%;
+        height: 765px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+        width: 100%;
+        height: 765px;
+        margin: 0%;
+    }
+
+    #menu_cabecera {
+        width: 100%;
+        height: 70px;
+        background-color: #004F7C;
+
+    }
+
+    #menu-bar:checked ~ .menu_contenedor_ul {
+        transform: translateX(0%);
+    }
+
+    #menu_cabecera label {
+
+        display: inline-block;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+
+    }
+
+    .menu_contenedor_ul {
+        position: absolute;
+        top: 73px;
+        left: -100px;
+        width: 50%;
+        /*height: 100vh;*/
+        background: rgba(0, 79, 124, 0.9);
+    / transition: all 0.5 s;
+        transform: translateX(-100%);
+    }
+
+    .menu_contenedor_ul ul {
+        list-style: none;
+
+    }
+
+    .menu_contenedor_ul ul li {
+        display: block;
+    }
+
+    .menu_contenedor_ul ul li:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .menu_contenedor_ul ul li a {
+        color: white;
+        height: 50px;
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+
+    ul li:hover .secundario {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 270px;
+        width: 200px;
+    }
+
+    ul li .secundario {
+        display: none;
+        background-color: #004F7C;
+        position: absolute;
+        width: 150%;
+    }
+
+    #menu_contenedor_img {
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15.5%;
+    }
+
+    #contenedor_loguin{
+        height: 1600px;
+    }
+    #caja_jugadores{
+        min-width: 300px;
+    }
+
+    #caja_cancha{
+        min-width: 700px;
+    }
+
+    #contenedor_footer {
+
+        width: 98%;
+        height: 130px;
+        background-color: #004F7C;
+        padding: 1%;
+    }
+
+    @media (min-width: 380px) and (max-width: 768px) {
+        ul li:hover .secundario {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 150px;
+            width: 50%;
+        }
+
+        ul li .secundario {
+            display: none;
+            background-color: #004F7C;
+            position: absolute;
+            width: 150%;
+        }
+
+    }
+}

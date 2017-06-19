@@ -39,12 +39,12 @@ $( document ).ready(function() {
             success: function (data) {
 
                 var nombre;
-
+                var posicion = 1;
                 $.each(data,function(indice,objeto){
                     var propietario;
                     var nombreEquipo;
                     var puntos;
-                    var posicion = 1;
+
                     $.each(objeto,function (propiedad, valor) {
                         if(propiedad == 'nombre_equipo')
                             nombreEquipo= valor;

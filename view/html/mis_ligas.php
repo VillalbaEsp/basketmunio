@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>Basketmunio</title>
-        <link rel="stylesheet" href="../css/ligas/mis_ligas_1366px.css">
+        <link rel="stylesheet" href="../css/mis_ligas_1366px.css">
         <link rel="stylesheet" href="../css/fontello.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <script src="../js/jquery-3.1.1.min.js"></script>
@@ -30,50 +30,43 @@
                 <label class="icon-menu" for="menu-bar"></label>
                 
                 
-                <div class="menu_contenedor_ul">
-                    
-                    <ul>
-                        
-                        <li><a href="#">Inicio</a></li>
-                        
-                        <li><a href="#">Mis equipos</a>
-                            <ul class="secundario">
-                                <li><a href="#">Plantilla</a></li>
-                                <li><a href="#">Clasificación</a></li>
-                                <li><a href="#">Mercado</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="#">Ligas</a>
-                            <ul class="secundario">
-                                <li><a href="#">Mis ligas</a></li>
-                                <li><a href="#">Ligas</a></li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                    
-                </div>
-                
-                <div id="menu_contenedor_img">
-                    
-                    <img src="../img/logo.png">
-                    
-                </div>
-   
-                <div class="menu_contenedor_ul" id="menu_dcha">
-                    
-                    <ul>
+                    <div id="menu_contenedor_img">
 
-                        <li><a href="#">Calendario</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        
-                    </ul>
-                    
+                         <img src="../img/logo.png">
+
+                    </div>
+                    <div class="menu_contenedor_ul">
+
+                        <ul>
+
+                            <li><a href="pagina_principal.php">Inicio</a></li>
+
+                            <li><a href="creaEquipo.php">Mis equipos</a>
+                                <ul class="secundario">
+                                    <li><a href="misequipos.php">Plantilla</a></li>
+                                    <li><a href="mis_ligas.php">Clasificación</a></li>
+                                    <li><a href="mercado.php">Mercado</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="busca_liga.php">Ligas</a>
+                                <ul class="secundario">
+                                    <li><a href="busca_liga.php">Mis ligas</a></li>
+                                    <li><a href="mis_ligas.php">Ligas</a></li>
+                                </ul>
+                            </li>
+
+
+                        <li><a href="calendario.php">Calendario</a></li>
+                        <li><a href="ayuda.php">Ayuda</a></li>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
+
+                        </ul>
+
                 </div>
                 
             </nav>
-
+        <div id=contenedor_contenido>
             <div id="contenedor_select_misligas">
                 <select id="select_misliga">
                     <option selected>Seleccione su equipo</option>
@@ -95,7 +88,7 @@
                     </tbody>
                 </table>
             </div>
-
+        </div>
             
         </section>
         

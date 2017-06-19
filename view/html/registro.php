@@ -88,8 +88,8 @@
                 
                     <div id="info">
                         <h4>Puedes seguirnos</h4>
-                        <a href="https://es-es.facebook.com/" class="icon-facebook-squared"></a> | 
-                        <a href="https://twitter.com/?lang=es" class="icon-twitter"></a>  
+                       <a href="https://es-es.facebook.com/" class="icon-facebook"></a> |
+                       <a href="https://twitter.com/BasketmunioTS" class="icon-twitter-bird"></a>
                         <p>Basketmunio creado y diseñado para fines no lucrativos | <span class="icon-copyright"></span> BASKETMUNIO</p>
 
                     </div>
