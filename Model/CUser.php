@@ -227,7 +227,7 @@ class CUser{
 
     public function validaPass($email, $pass)
     {
-        $stmt = $this->mysqli->prepare("SELECT password_usuario FROM usuarios WHERE email_usuario=?");
+        $stmt = $this->mysqli->prepare("SELECT password_usuario FROM usuarios WHERE email_usuario=? AND activado_usuario=1");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $resultado = $stmt->get_result();
@@ -256,6 +256,57 @@ class CUser{
             return false;
 
     }
+
+    public function ponerCodigoPassword($email,$codigo){
+
+        if($this->setCodigoPassword($email,$codigo))
+            return true;
+        else
+            return false;
+    }
+
+    private function setCodigoPassword($email, $codigo){
+
+        $stmt = $this->mysqli->prepare("UPDATE usuarios SET codigo_activacion_usuario=? WHERE email_usuario=?");
+
+        $stmt->bind_param("ss", $codigo, $email);
+        $stmt->execute();
+
+        //var_dump($stmt);
+
+
+        if($stmt->affected_rows == 1)
+            return true;
+        else
+            return false;
+
+    }
+
+    public function ponerNuevaPassword($codigoUrl, $password){
+
+        if($this->setNuevaPassword($codigoUrl, $password))
+            return true;
+        else
+            return false;
+
+    }
+
+    private function setNuevaPassword($codigoUrl, $password){
+
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $this->mysqli->prepare("UPDATE usuarios SET password_usuario=? WHERE codigo_activacion_usuario=?");
+
+        $stmt->bind_param("ss", $password, $codigoUrl);
+
+        $stmt->execute();
+
+        if($stmt->affected_rows == 1)
+            return true;
+        else
+            return false;
+    }
+
 
    public function get_id()
     {

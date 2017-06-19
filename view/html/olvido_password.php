@@ -10,7 +10,7 @@
             <link rel="stylesheet" href="../css/fontello.css">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
             <script src="../js/jquery-3.1.1.min.js"></script>
-            <script src="../js/registro/codigoActivacion.js"></script>
+            <script src="../js/registro/olvidoPassword.js"></script>
         <?php
 
         if(isset($_GET["error"])) {
@@ -49,15 +49,15 @@
                 
                 <div id="contenedor_form_registro">
 
-                    <div id="msg_error" style="<?php echo $displayError ?>;">Código incorrecto.</div>
-                    <div id="msg_success" style="<?php echo $displaySucces ?>;">Cuenta activada correctamente.</div>
+                    <div id="msg_error" style="<?php echo $displayError ?>;">Email incorrecto.</div>
+                    <div id="msg_success" style="<?php echo $displaySucces ?>;">Email enviado.</div>
 
                 <div id="form_registro" style="<?php echo $form?>">
                 
                    <form id="formulario">
 
-                       <label for="input_registrado" id="label_registrado">Se ha registrado correctamente, en unos momentos le llegara un email de confirmación, por favor intoduce el código de activación para activar la cuenta: </label>
-                       <input type="text" name="codigo" id="input_codigo" required >
+                       <label for="input_registrado" id="label_registrado">Introduzca su email, en unos minutos le enviaremos un enlace al mismo para restablecerla:</label>
+                       <input type="text" name="codigo" id="input_codigo" placeholder="Email" required >
                     
                        <input type="button" name="envio_codigo" id="button_registro" value="Enviar">
 
@@ -73,8 +73,8 @@
                 
                     <div id="info">
                         <h4>Puedes seguirnos</h4>
-                        <a href="https://es-es.facebook.com/" class="icon-facebook"></a> |
-                        <a href="https://twitter.com/BasketmunioTS" class="icon-twitter-bird"></a>
+                        <a href="https://es-es.facebook.com/" class="icon-facebook-squared"></a> | 
+                        <a href="https://twitter.com/?lang=es" class="icon-twitter"></a>  
                         <p>Basketmunio creado y diseñado para fines no lucrativos | <span class="icon-copyright"></span> BASKETMUNIO</p>
 
                     </div>

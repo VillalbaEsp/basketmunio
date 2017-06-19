@@ -16,6 +16,9 @@ $( document ).ready(function() {
 $( "#select_equipo select" ).change(function () {
 
     var idEquipo = $(this).val();
+    $('#caja_estadistica').empty();
+    $(".jugador_campo").empty();
+    $('#lista_jugadores').empty();
 
     $.ajax({
         type: 'POST',
@@ -32,9 +35,10 @@ $( "#select_equipo select" ).change(function () {
                         if(k == 'nombre_jugador')
                             nombre = '<li style="te">Nombre: '+ t +'';
                         if(k == 'posicion_jugador')
-                            $('.titular').append( nombre + '     <br>Posición: ' + t +'</li>');
-                        if(k == 'nombre_jugador' && i < 6 )
-                        $("#caja_imagen").append("<span id='jugador" + i + "'>" + t + "</span>");
+
+                            $('#lista_jugadores').append( nombre + '     <br>Posición: ' + t +'</li>');
+                        if(k == 'nombre_jugador' && i <= 5 && i > 0)
+                            $("#caja_imagen").append("<span class='jugador_campo' id='jugador" + i + "'>" + t + "</span>");
 
                     }
                 })

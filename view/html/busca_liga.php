@@ -10,7 +10,12 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/Ligas/ligas.js"></script>
 
+    <?php
+    session_start();
+    if(!isset($_SESSION['id_usuario']))
+        header("Location: /basketmunio/view/html/login.php");
 
+    ?>
 </head>
 
 
@@ -44,16 +49,16 @@
                     </ul>
                 </li>
 
-                <li><a href="busca_liga.html">Ligas</a>
+                <li><a href="busca_liga.php">Ligas</a>
                     <ul class="secundario">
-                        <li><a href="busca_liga.html">Mis ligas</a></li>
+                        <li><a href="busca_liga.php">Mis ligas</a></li>
                         <li><a href="mis_ligas.php">Ligas</a></li>
                     </ul>
                 </li>
 
 
                 <li><a href="calendario.php">Calendario</a></li>
-                <li><a href="ayuda.hmtl">Ayuda</a></li>
+                <li><a href="ayuda.php">Ayuda</a></li>
                 <li><a href="logout.php">Cerrar sesión</a></li>
 
             </ul>
