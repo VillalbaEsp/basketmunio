@@ -12,9 +12,9 @@ class Conexion{
 
             echo "Error al conectarse a la BBDD" . $mysqli->connect_errno;
         }
-        /*else{
+        else{
             $mysqli->set_charset("utf8");//le decimos que utilice utf8
-        }*/
+        }
 
         return $mysqli;
 
