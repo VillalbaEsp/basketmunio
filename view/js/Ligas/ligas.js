@@ -15,7 +15,7 @@ $( document ).ready(function() {
                 $("#contenedor_form").empty();
                 $("#contenedor_form").append("<div id='search_resultado'></div>");
                 $("#search_resultado").append("<table id='ligas'>" +
-                    "<thead><tr><th>Liga</th><th id='pp'>Usuarios</th><th>Unirse</th></tr></thead>");
+                    "<thead><tr><th>Liga</th><th id='pp'>Usuarios</th></tr></thead>");
 
 
 

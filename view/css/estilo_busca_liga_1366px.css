@@ -208,10 +208,12 @@ ul li .secundario {
     border: 2px solid green;
     margin: auto;
     color: #004F7C;
+    text-align: center;
 }
 
-#ligas tr td{
-    border: 2px solid greenyellow;
+#ligas tbody td{
+    border: 2px solid #004F7C;
+    color: #004F7C;
 }
 
 .unirse{
